@@ -1,1 +1,113 @@
 /* You can add global styles to this file, and also import other style files */
+@import "assets/css/normalize.css";
+/* Normalize */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap");
+/* Font family Poppins */
+
+/* variables */
+:root {
+    --bs-primary-shadow: #8b8eaf;
+    --bs-card-bg: #f5f5f5;
+    --bs-card-bg-dark: #1e1f26;
+    --bs-card-border-width: 1px;
+    --bs-border-color-translucent: rgba(0, 0, 0, 0.175);
+    --bs-card-border-color: var(--bs-border-color-translucent);
+    --bs-card-border-radius: 0.6rem;
+    --bs-card-height: 100vh;
+    --bs-card-padding: 2rem;
+    --bs-card-margin-bottom: 4rem;
+    --bs-card-border-bottom: 1px solid #e6e6e6;
+    --bs-background-color: #1d293f;
+    --bs-text-color: #f5f5f5;
+    --bs-text-color-dark: #1d293f;
+}
+
+/*Normalize*/
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    /* 10px */
+    scroll-behavior: smooth;
+}
+
+body {
+    font-size: 1.6rem;
+    /* 16px */
+    line-height: 1.5;
+    font-family: "Poppins", sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Card */
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    word-wrap: break-word;
+    min-width: 0;
+    height: var(--bs-card-height);
+    background-color: var(--bs-card-bg);
+    background-clip: border-box;
+    border: var(--bs-card-border-width) solid var(--bs-card-border-color);
+    border-radius: var(--bs-card-border-radius);
+    padding: var(--bs-card-padding);
+    margin-bottom: var(--bs-card-margin-bottom);
+    margin: 2rem;
+}
+
+.card__title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.card__container {
+    display: flex;
+}
+
+.card__logo {
+    width: 15rem;
+    padding: 0 1rem;
+}
+
+.img__logo {
+    width: 100%;
+}
+
+.card__subtitle {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.card__work,
+.card__year,
+.card__city {
+    font-size: 1.4rem;
+    font-weight: 300;
+}
+
+.card__text {
+    font-size: 1.8rem;
+    margin: 1rem 0;
+    border-bottom: var(--bs-card-border-bottom);
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+}
