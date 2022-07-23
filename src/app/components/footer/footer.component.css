@@ -3,7 +3,7 @@ footer {
     color: var(--bs-card-bg);
 }
 
-.footer__container {
+.footer-container {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
@@ -11,7 +11,7 @@ footer {
     padding: 6rem 0;
 }
 
-.footer__nav > ul {
+.footer-nav > ul {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -22,20 +22,20 @@ footer {
     gap: 1.5rem;
 }
 
-.footer__nav > ul > li > a {
+.footer-nav > ul > li > a {
     text-decoration: none;
     color: var(--bs-text-color);
 }
 
-.footer__nav > ul > li > a:hover {
+.footer-nav > ul > li > a:hover {
     font-weight: 700;
 }
 
-.footer__social {
+.footer-social {
     font-size: 3rem;
 }
 
-.footer__social > ul {
+.footer-social > ul {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -43,12 +43,18 @@ footer {
     gap: 2rem;
 }
 
-.footer__social > ul > li > a {
+.footer-social > ul > li > a {
     text-decoration: none;
-    color: var(--bs-text-color);
+    color: var(--bs-background-color);
 }
 
-.footer__copy {
+.bg-ico {
+    background-color: var(--bs-text-color);
+    border-radius: 50%;
+    padding: 0 0.8rem;
+}
+
+.footer-copy {
     font-weight: 300;
     text-align: center;
     padding-top: 3rem;

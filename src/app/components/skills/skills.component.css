@@ -1,0 +1,44 @@
+.skills-title {
+    padding-top: 1.6rem;
+    padding-bottom: 1.6rem;
+    color: var(--bs-color-text-dark);
+}
+
+.sill-title {
+    letter-spacing: 4px;
+}
+
+.skill-light-grey {
+    color: #000;
+    background-color: #f1f1f1;
+}
+
+.skill-container:after,
+.skill-container:before {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.skill-container {
+    padding: 0.01em 16px;
+}
+
+.skill-center {
+    display: inline-block;
+    width: auto;
+    text-align: center;
+}
+
+.skill-center {
+    text-align: center;
+}
+
+.skill-padding-small {
+    padding: 4px 8px;
+}
+
+.skill-dark-grey {
+    color: #fff;
+    background-color: #616161;
+}

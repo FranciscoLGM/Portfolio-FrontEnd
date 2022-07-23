@@ -18,7 +18,10 @@
     --bs-card-padding: 2rem;
     --bs-card-margin-bottom: 4rem;
     --bs-card-border-bottom: 1px solid #e6e6e6;
+    --bs-card-box-shadow: 0 0 10px 0 #777;
     --bs-background-color: #1d293f;
+    --bs-background-color-dark: #131417;
+    --bs-background-color-light: #f5f5f5;
     --bs-text-color: #f5f5f5;
     --bs-text-color-dark: #1d293f;
 }
@@ -53,6 +56,12 @@ a {
     text-decoration: none;
 }
 
+/* Container */
+
+.container {
+    max-width: 1320px;
+    margin: 0 auto;
+}
 /* Card */
 
 .card {
@@ -70,41 +79,42 @@ a {
     border-radius: var(--bs-card-border-radius);
     padding: var(--bs-card-padding);
     margin-bottom: var(--bs-card-margin-bottom);
-    margin: 2rem;
+    margin: 0 a-o;
+    margin-bottom: 2rem;
 }
 
-.card__title {
+.card-title {
     font-size: 2.5rem;
     font-weight: 600;
     margin-bottom: 1rem;
 }
 
-.card__container {
+.card-container {
     display: flex;
 }
 
-.card__logo {
+.card-logo {
     width: 15rem;
     padding: 0 1rem;
 }
 
-.img__logo {
+.img-logo {
     width: 100%;
 }
 
-.card__subtitle {
+.card-subtitle {
     font-size: 2rem;
     font-weight: 600;
 }
 
-.card__work,
-.card__year,
-.card__city {
+.card-work,
+.card-year,
+.card-city {
     font-size: 1.4rem;
     font-weight: 300;
 }
 
-.card__text {
+.card-text {
     font-size: 1.8rem;
     margin: 1rem 0;
     border-bottom: var(--bs-card-border-bottom);

@@ -10,27 +10,27 @@
     height: 70px;
 }
 
-.navbar__logo {
+.navbar-logo {
     display: flex;
     align-items: center;
     gap: 1rem;
 }
 
-.nav__logo {
+.nav-logo {
     display: flex;
     max-width: 100%;
     height: 70px;
 }
 
-.nav__img {
+.nav-img {
     width: 100%;
 }
 
-.nav__paragraph {
+.nav-paragraph {
     font-size: 1.4rem;
 }
 
-.nav__social {
+.nav-social {
     display: flex;
     align-items: center;
     gap: 2rem;
@@ -40,7 +40,7 @@
 
 /* Menu Hamburger */
 
-.menu__circle {
+.menu-circle {
     display: flex;
     z-index: 2;
     padding: 2rem 2.1rem;

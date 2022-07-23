@@ -20,7 +20,7 @@
     color: #f5f5f5;
 }
 
-.title__banner {
+.banner-title {
     grid-column: 1 / span 12;
     grid-row: 5;
     text-align: center;
@@ -30,7 +30,7 @@
     padding: 0.5rem;
 }
 
-.paragraph__banner {
+.banner-paragraph {
     grid-column: 1 / span 12;
     grid-row: 6;
     text-align: center;
