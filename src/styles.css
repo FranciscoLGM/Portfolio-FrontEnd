@@ -8,13 +8,13 @@
 /* variables */
 :root {
     --bs-primary-shadow: #8b8eaf;
-    --bs-card-bg: #f5f5f5;
+    --bs-card-bg: #e2e2e2;
     --bs-card-bg-dark: #1e1f26;
     --bs-card-border-width: 1px;
     --bs-border-color-translucent: rgba(0, 0, 0, 0.175);
     --bs-card-border-color: var(--bs-border-color-translucent);
     --bs-card-border-radius: 0.6rem;
-    --bs-card-height: 100vh;
+    --bs-card-height: "";
     --bs-card-padding: 2rem;
     --bs-card-margin-bottom: 4rem;
     --bs-card-border-bottom: 1px solid #e6e6e6;
@@ -24,6 +24,7 @@
     --bs-background-color-light: #f5f5f5;
     --bs-text-color: #f5f5f5;
     --bs-text-color-dark: #1d293f;
+    --bs-font-size-h2: 3rem;
 }
 
 /*Normalize*/
@@ -46,6 +47,17 @@ body {
     /* 16px */
     line-height: 1.5;
     font-family: "Poppins", sans-serif;
+    background: #ece9e6; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+        to right,
+        #ffffff,
+        #ece9e6
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+        to right,
+        #ffffff,
+        #ece9e6
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 ul {
@@ -62,6 +74,7 @@ a {
     max-width: 1320px;
     margin: 0 auto;
 }
+
 /* Card */
 
 .card {
@@ -79,14 +92,17 @@ a {
     border-radius: var(--bs-card-border-radius);
     padding: var(--bs-card-padding);
     margin-bottom: var(--bs-card-margin-bottom);
-    margin: 0 a-o;
+    margin: 0 auto;
     margin-bottom: 2rem;
+    box-shadow: var(--bs-card-box-shadow);
 }
 
 .card-title {
-    font-size: 2.5rem;
+    font-size: var(--bs-font-size-h2);
     font-weight: 600;
-    margin-bottom: 1rem;
+    color: var(--bs-text-color-dark);
+    margin: 3rem 0;
+    padding: 3rem 0;
 }
 
 .card-container {
@@ -116,8 +132,5 @@ a {
 
 .card-text {
     font-size: 1.8rem;
-    margin: 1rem 0;
-    border-bottom: var(--bs-card-border-bottom);
-    padding-bottom: 2rem;
-    margin-bottom: 2rem;
+    padding: 1rem 0;
 }

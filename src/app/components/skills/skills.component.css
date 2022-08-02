@@ -1,16 +1,18 @@
 .skills-title {
-    padding-top: 1.6rem;
-    padding-bottom: 1.6rem;
+    margin: 5rem 0 1rem 0;
+    padding: 2rem 0;
     color: var(--bs-color-text-dark);
+    font-size: var(--bs-font-size-h2);
 }
 
 .sill-title {
     letter-spacing: 4px;
+    padding: 0.6rem 0;
 }
 
 .skill-light-grey {
     color: #000;
-    background-color: #f1f1f1;
+    background-color: #f7f8f8;
 }
 
 .skill-container:after,
@@ -39,6 +41,6 @@
 }
 
 .skill-dark-grey {
-    color: #fff;
-    background-color: #616161;
+    color: var(--bs-text-color);
+    background-color: #acbb78;
 }

@@ -1,3 +1,51 @@
 <app-navbar></app-navbar>
-<p>contact works!</p>
+<section>
+    <article class="container">
+        <h2 class="title-form">Formulario de contacto</h2>
+        <form
+            action="https://formsubmit.co/5c8c47e90c490c56d8cd72090fb45171"
+            method="post"
+        >
+            <fieldset>
+                <label for="name">Nombre</label>
+                <input
+                    type="text"
+                    name="name"
+                    id="name"
+                    required
+                    placeholder="Ingresa tú nombre"
+                />
+            </fieldset>
+            <fieldset>
+                <label for="email">Email</label>
+                <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    required
+                    placeholder="Ingresa tú email"
+                    _replyto
+                />
+            </fieldset>
+            <fieldset>
+                <label for="message">Mensaje</label>
+                <textarea
+                    name="message"
+                    id="message"
+                    required
+                    placeholder="Ingresa tú mensaje"
+                ></textarea>
+            </fieldset>
+            <input type="hidden" name="_subject" value="Nuevo mensaje!" />
+            <input
+                type="hidden"
+                name="_autoresponse"
+                value="¡Muchas gracias por tu mensaje! lo recibí correctamente 😊. Me comunicaré contigo en las próximas 48 horas."
+            />
+            <fieldset>
+                <button type="submit">Enviar</button>
+            </fieldset>
+        </form>
+    </article>
+</section>
 <app-footer></app-footer>

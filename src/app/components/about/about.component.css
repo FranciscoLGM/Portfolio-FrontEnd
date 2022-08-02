@@ -19,7 +19,6 @@
 
 .about-avatar {
     max-width: 300px;
-    margin-top: 10rem;
 }
 
 .about-avatar > picture > img {
@@ -30,8 +29,8 @@
 
 .about-title {
     text-align: center;
-    font-size: 3rem;
-    color: inherit;
+    font-size: var(--bs-font-size-h2);
+    color: var(--bs-text-color-dark);
     margin: 4rem 0 2rem 0;
 }
 
