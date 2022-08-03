@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ServicesService } from 'src/app/services/services.service';
 
 @Component({
   selector: 'app-expertise',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./expertise.component.css']
 })
 export class ExpertiseComponent implements OnInit {
+  expertises: any;
 
-  constructor() { }
+  constructor(private getData: ServicesService) { }
 
   ngOnInit(): void {
+    this.getData.getdata().subscribe(data => {
+      console.log(data.expertise);      
+      this.expertises = data.expertise;
+    });
   }
 
 }

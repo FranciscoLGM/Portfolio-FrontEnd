@@ -1,109 +1,29 @@
 <section class="container" id="education">
     <h2 class="card-title">Formación</h2>
 
-    <section class="card">
+    <section class="card" *ngFor="let education of educations">
         <article class="card-container">
             <section class="card-logo">
                 <picture>
                     <img
                         class="img-logo"
-                        src="../../../assets/images/UP-logo.png"
+                        [src]="education.img"
                         alt="Logo Expertise 1"
                     />
                 </picture>
             </section>
 
             <section>
-                <h3 class="card-subtitle">Diseñador Fotografico</h3>
-                <p class="card-work">Universidad de Palermo</p>
-                <p class="card-year">2010 - 2015</p>
+                <h3 class="card-subtitle">{{ education.title }}</h3>
+                <p class="card-work">{{ education.company }}</p>
+                <p class="card-year">
+                    {{ education.start }} - {{ education.end }}
+                </p>
                 <p class="card-city">
-                    Ciudad Autonóma de Buenos Aires, Argentina
+                    {{ education.city }}
                 </p>
                 <p class="card-text">
-                    Desarrollo de aplicaciones web para la web, para
-                    dispositivos móviles y para la web.
-                </p>
-            </section>
-        </article>
-    </section>
-
-    <section class="card">
-        <article class="card-container">
-            <section class="card-logo">
-                <picture>
-                    <img
-                        class="img-logo"
-                        src="../../../assets/images/UP-logo.png"
-                        alt="Logo Expertise 1"
-                    />
-                </picture>
-            </section>
-
-            <section>
-                <h3 class="card-subtitle">Diseñador Fotografico</h3>
-                <p class="card-work">Universidad de Palermo</p>
-                <p class="card-year">2010 - 2015</p>
-                <p class="card-city">
-                    Ciudad Autonóma de Buenos Aires, Argentina
-                </p>
-                <p class="card-text">
-                    Desarrollo de aplicaciones web para la web, para
-                    dispositivos móviles y para la web.
-                </p>
-            </section>
-        </article>
-    </section>
-
-    <section class="card">
-        <article class="card-container">
-            <section class="card-logo">
-                <picture>
-                    <img
-                        class="img-logo"
-                        src="../../../assets/images/UP-logo.png"
-                        alt="Logo Expertise 1"
-                    />
-                </picture>
-            </section>
-
-            <section>
-                <h3 class="card-subtitle">Diseñador Fotografico</h3>
-                <p class="card-work">Universidad de Palermo</p>
-                <p class="card-year">2010 - 2015</p>
-                <p class="card-city">
-                    Ciudad Autonóma de Buenos Aires, Argentina
-                </p>
-                <p class="card-text">
-                    Desarrollo de aplicaciones web para la web, para
-                    dispositivos móviles y para la web.
-                </p>
-            </section>
-        </article>
-    </section>
-
-    <section class="card">
-        <article class="card-container">
-            <section class="card-logo">
-                <picture>
-                    <img
-                        class="img-logo"
-                        src="../../../assets/images/UP-logo.png"
-                        alt="Logo Expertise 1"
-                    />
-                </picture>
-            </section>
-
-            <section>
-                <h3 class="card-subtitle">Diseñador Fotografico</h3>
-                <p class="card-work">Universidad de Palermo</p>
-                <p class="card-year">2010 - 2015</p>
-                <p class="card-city">
-                    Ciudad Autonóma de Buenos Aires, Argentina
-                </p>
-                <p class="card-text">
-                    Desarrollo de aplicaciones web para la web, para
-                    dispositivos móviles y para la web.
+                    {{ education.description }}
                 </p>
             </section>
         </article>

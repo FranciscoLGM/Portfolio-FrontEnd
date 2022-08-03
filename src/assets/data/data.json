@@ -1,0 +1,109 @@
+{
+    "name": "Francisco",
+    "profession": "Diseñador Fotográfico",
+    "profession2": "Desarrollador Full Stack",
+    "profession_description": "Diseño y codifico cosas hermosas y sencillas, y me encanta lo que hago",
+    "expertise": [
+        {
+            "title": "Desarrollo de aplicaciones web",
+            "company": "Argentina Programa",
+            "start": "Sept. 2020",
+            "end": "actualidad",
+            "city": "Ciudad Autonóma Buenos Aires",
+            "description": "Desarrollo de aplicaciones web con React, NodeJS, MongoDB, GraphQL, Firebase, AWS, Heroku, Git, etc.",
+            "img": "../../../assets/images/arg-programa.png"
+        },
+        {
+            "title": "Desarrollo de aplicaciones web",
+            "company": "Argentina Programa",
+            "start": "Sept. 2020",
+            "end": "actualidad",
+            "city": "Ciudad Autonóma Buenos Aires",
+            "description": "Desarrollo de aplicaciones web con React, NodeJS, MongoDB, GraphQL, Firebase, AWS, Heroku, Git, etc.",
+            "img": "../../../assets/images/arg-programa.png"
+        },
+        {
+            "title": "Desarrollo de aplicaciones web",
+            "company": "Argentina Programa",
+            "start": "Sept. 2020",
+            "end": "actualidad",
+            "city": "Ciudad Autonóma Buenos Aires",
+            "description": "Desarrollo de aplicaciones web con React, NodeJS, MongoDB, GraphQL, Firebase, AWS, Heroku, Git, etc.",
+            "img": "../../../assets/images/arg-programa.png"
+        },
+        {
+            "title": "Desarrollo de aplicaciones web",
+            "company": "Argentina Programa",
+            "start": "Sept. 2020",
+            "end": "actualidad",
+            "city": "Ciudad Autonóma Buenos Aires",
+            "description": "Desarrollo de aplicaciones web con React, NodeJS, MongoDB, GraphQL, Firebase, AWS, Heroku, Git, etc.",
+            "img": "../../../assets/images/arg-programa.png"
+        },
+        {
+            "title": "Desarrollo de aplicaciones web",
+            "company": "Argentina Programa",
+            "start": "Sept. 2020",
+            "end": "actualidad",
+            "city": "Ciudad Autonóma Buenos Aires",
+            "description": "Desarrollo de aplicaciones web con React, NodeJS, MongoDB, GraphQL, Firebase, AWS, Heroku, Git, etc.",
+            "img": "../../../assets/images/arg-programa.png"
+        },
+        {
+            "title": "Desarrollo de aplicaciones web",
+            "company": "Argentina Programa",
+            "start": "Sept. 2020",
+            "end": "actualidad",
+            "city": "Ciudad Autonóma Buenos Aires",
+            "description": "Desarrollo de aplicaciones web con React, NodeJS, MongoDB, GraphQL, Firebase, AWS, Heroku, Git, etc.",
+            "img": "../../../assets/images/arg-programa.png"
+        }
+    ],
+    "education": [
+        {
+            "title": "Diseñador Fotográfico",
+            "company": "Universidad de Palermo",
+            "start": "Agosto 2010",
+            "end": "Junio 2015",
+            "city": "Ciudad Autonóma Buenos Aires",
+            "description": "Diseñador fotográfico, trabajé en una empresa de fotografía, y luego me desempeñé en una empresa de diseño gráfico.",
+            "img": "../../../assets/images/UP-logo.png" 
+        },
+        {
+            "title": "Diseñador Fotográfico",
+            "company": "Universidad de Palermo",
+            "start": "Agosto 2010",
+            "end": "Junio 2015",
+            "city": "Ciudad Autonóma Buenos Aires",
+            "description": "Diseñador fotográfico, trabajé en una empresa de fotografía, y luego me desempeñé en una empresa de diseño gráfico.",
+            "img": "../../../assets/images/UP-logo.png"
+        },
+        {
+            "title": "Diseñador Fotográfico",
+            "company": "Universidad de Palermo",
+            "start": "Agosto 2010",
+            "end": "Junio 2015",
+            "city": "Ciudad Autonóma Buenos Aires",
+            "description": "Diseñador fotográfico, trabajé en una empresa de fotografía, y luego me desempeñé en una empresa de diseño gráfico.",
+            "img": "../../../assets/images/UP-logo.png"
+        },
+        {
+            "title": "Diseñador Fotográfico",
+            "company": "Universidad de Palermo",
+            "start": "Agosto 2010",
+            "end": "Junio 2015",
+            "city": "Ciudad Autonóma Buenos Aires",
+            "description": "Diseñador fotográfico, trabajé en una empresa de fotografía, y luego me desempeñé en una empresa de diseño gráfico.",
+            "img": "../../../assets/images/UP-logo.png"
+        },
+        {
+            "title": "Diseñador Fotográfico",
+            "company": "Universidad de Palermo",
+            "start": "Agosto 2010",
+            "end": "Junio 2015",
+            "city": "Ciudad Autonóma Buenos Aires",
+            "description": "Diseñador fotográfico, trabajé en una empresa de fotografía, y luego me desempeñé en una empresa de diseño gráfico.",
+            "img": "../../../assets/images/UP-logo.png"
+        }
+    ]
+}

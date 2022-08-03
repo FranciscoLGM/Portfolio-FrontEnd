@@ -14,6 +14,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { ContactComponent } from './components/contact/contact.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule, 
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

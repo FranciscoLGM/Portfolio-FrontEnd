@@ -1,109 +1,29 @@
 <section class="container" id="expertise">
     <h2 class="card-title">Experiencia</h2>
 
-    <section class="card">
+    <section class="card" *ngFor="let expertise of expertises">
         <article class="card-container">
             <section class="card-logo">
                 <picture>
                     <img
                         class="img-logo"
-                        src="../../../assets/images/arg-programa.png"
+                        [src]="expertise.img"
                         alt="Logo Expertise 1"
                     />
                 </picture>
             </section>
 
             <section>
-                <h3 class="card-subtitle">Desarrollo de aplicaciones web</h3>
-                <p class="card-work">Argentina Programa</p>
-                <p class="card-year">Sept. 2020 - actualidad</p>
+                <h3 class="card-subtitle">{{ expertise.title }}</h3>
+                <p class="card-work">{{ expertise.company }}</p>
+                <p class="card-year">
+                    {{ expertise.start }} - {{ expertise.end }}
+                </p>
                 <p class="card-city">
-                    Ciudad Autonóma de Buenos Aires, Argentina
+                    {{ expertise.city }}
                 </p>
                 <p class="card-text">
-                    Desarrollo de aplicaciones web para la web, para
-                    dispositivos móviles y para la web.
-                </p>
-            </section>
-        </article>
-    </section>
-
-    <section class="card">
-        <article class="card-container">
-            <section class="card-logo">
-                <picture>
-                    <img
-                        class="img-logo"
-                        src="../../../assets/images/arg-programa.png"
-                        alt="Logo Expertise 1"
-                    />
-                </picture>
-            </section>
-
-            <section>
-                <h3 class="card-subtitle">Desarrollo de aplicaciones web</h3>
-                <p class="card-work">Argentina Programa</p>
-                <p class="card-year">Sept. 2020 - actualidad</p>
-                <p class="card-city">
-                    Ciudad Autonóma de Buenos Aires, Argentina
-                </p>
-                <p class="card-text">
-                    Desarrollo de aplicaciones web para la web, para
-                    dispositivos móviles y para la web.
-                </p>
-            </section>
-        </article>
-    </section>
-
-    <section class="card">
-        <article class="card-container">
-            <section class="card-logo">
-                <picture>
-                    <img
-                        class="img-logo"
-                        src="../../../assets/images/arg-programa.png"
-                        alt="Logo Expertise 1"
-                    />
-                </picture>
-            </section>
-
-            <section>
-                <h3 class="card-subtitle">Desarrollo de aplicaciones web</h3>
-                <p class="card-work">Argentina Programa</p>
-                <p class="card-year">Sept. 2020 - actualidad</p>
-                <p class="card-city">
-                    Ciudad Autonóma de Buenos Aires, Argentina
-                </p>
-                <p class="card-text">
-                    Desarrollo de aplicaciones web para la web, para
-                    dispositivos móviles y para la web.
-                </p>
-            </section>
-        </article>
-    </section>
-
-    <section class="card">
-        <article class="card-container">
-            <section class="card-logo">
-                <picture>
-                    <img
-                        class="img-logo"
-                        src="../../../assets/images/arg-programa.png"
-                        alt="Logo Expertise 1"
-                    />
-                </picture>
-            </section>
-
-            <section>
-                <h3 class="card-subtitle">Desarrollo de aplicaciones web</h3>
-                <p class="card-work">Argentina Programa</p>
-                <p class="card-year">Sept. 2020 - actualidad</p>
-                <p class="card-city">
-                    Ciudad Autonóma de Buenos Aires, Argentina
-                </p>
-                <p class="card-text">
-                    Desarrollo de aplicaciones web para la web, para
-                    dispositivos móviles y para la web.
+                    {{ expertise.description }}
                 </p>
             </section>
         </article>
