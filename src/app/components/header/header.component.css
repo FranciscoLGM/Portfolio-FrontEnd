@@ -37,7 +37,7 @@
 
 .fa-angles-down {
     color: var(--bs-text-color);
-    font-size: 2.5rem;
+    font-size: 3rem;
     padding-bottom: 7rem;
     animation-name: moveUpDown;
     animation-duration: 1s;

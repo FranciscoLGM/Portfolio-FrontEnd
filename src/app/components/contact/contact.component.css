@@ -1,22 +1,22 @@
-section {
-    /* background-color: var(--bs-color-bg-light); */
-    background: #d3cce3; /* fallback for old browsers */
-    background: -webkit-linear-gradient(
-        to right,
-        #e9e4f0,
-        #d3cce3
-    ); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(
-        to right,
-        #e9e4f0,
-        #d3cce3
-    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+.contact {
+    margin-bottom: 6rem;
 }
 
-.title-form {
+.contact-title {
     font-size: var(--bs-font-size-h2);
+    font-weight: 700;
+    font-style: italic;
+    padding-bottom: 3rem;
     color: var(--bs-text-color-dark);
-    padding-bottom: 1.5rem;
+    text-align: center;
+}
+
+.contact-text {
+    font-size: 1.7rem;
+    font-weight: 400;
+    padding-bottom: 4rem;
+    color: var(--bs-text-color-dark);
+    text-align: center;
 }
 
 .container {
@@ -33,7 +33,7 @@ form {
     color: #f3f3f3;
     padding: 5rem;
     border-radius: 0.5rem;
-    width: 700px;
+    width: 800px;
 }
 
 fieldset {
