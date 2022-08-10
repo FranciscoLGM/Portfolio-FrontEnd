@@ -32,7 +32,7 @@ form {
     background-color: rgba(27, 27, 50, 0.8);
     color: #f3f3f3;
     padding: 5rem;
-    border-radius: 0.5rem;
+    border-radius: 1rem;
     width: 800px;
 }
 
@@ -93,8 +93,54 @@ button {
     display: block;
     width: 100%;
     padding: 1rem;
-    background-color: #198754;
-    color: inherit;
+    /* background-color: #198754; */
+    background: #8ca6db; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+        to right,
+        #b993d6,
+        #8ca6db
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+        to right,
+        #b993d6,
+        #8ca6db
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: var(--bs-text-color);
+    font-weight: 600;
     border-radius: 20px;
     cursor: pointer;
+}
+
+button:hover {
+    background: #b993d6; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+        to right,
+        #8ca6db,
+        #b993d6
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+        to right,
+        #8ca6db,
+        #b993d6
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+/* Media Queries */
+
+@media (max-width: 850px) {
+    form {
+        width: 600px;
+    }
+}
+
+@media (max-width: 650px) {
+    form {
+        width: 460px;
+    }
+}
+
+@media (max-width: 500px) {
+    form {
+        max-width: 350px;
+    }
 }

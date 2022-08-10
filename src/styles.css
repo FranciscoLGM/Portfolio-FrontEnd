@@ -73,6 +73,7 @@ a {
 .container {
     max-width: 1320px;
     margin: 0 auto;
+    padding: 0 2rem;
 }
 
 /* Card */
@@ -99,10 +100,11 @@ a {
 
 .card-title {
     font-size: var(--bs-font-size-h2);
-    font-weight: 600;
+    font-weight: 700;
     color: var(--bs-text-color-dark);
     margin: 3rem 0;
     padding: 3rem 0;
+    text-align: center;
 }
 
 .card-container {

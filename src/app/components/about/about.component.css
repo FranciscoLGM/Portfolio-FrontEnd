@@ -32,10 +32,12 @@
     font-size: var(--bs-font-size-h2);
     color: var(--bs-text-color-dark);
     margin: 4rem 0 2rem 0;
+    padding: 0 2rem;
 }
 
 .about-paragraph {
     text-align: center;
     font-size: 1.8rem;
     color: inherit;
+    padding: 0 2rem;
 }

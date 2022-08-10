@@ -9,7 +9,7 @@
 
 .projects-text {
     font-size: var(--bs-font-size-h2);
-    font-weight: 600;
+    font-weight: 700;
     padding: 0 0 8rem 0;
     color: var(--bs-text-color-dark);
 }
@@ -28,6 +28,7 @@
     padding: 1.5rem;
     border-radius: 10px;
     box-shadow: var(--bs-card-box-shadow);
+    margin: 0 auto;
 }
 
 figure > a {
