@@ -1,21 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import { ServicesService } from 'src/app/services/services.service';
+import { portfolioService } from 'src/app/services/portfolio.service';
 
 @Component({
-  selector: 'app-expertise',
-  templateUrl: './expertise.component.html',
-  styleUrls: ['./expertise.component.css']
+    selector: 'app-expertise',
+    templateUrl: './expertise.component.html',
+    styleUrls: ['./expertise.component.css'],
 })
 export class ExpertiseComponent implements OnInit {
-  expertises: any;
+    expertises: any;
 
-  constructor(private getData: ServicesService) { }
+    constructor(private getData: portfolioService) {}
 
-  ngOnInit(): void {
-    this.getData.getdata().subscribe(data => {
-      console.log(data.expertise);      
-      this.expertises = data.expertise;
-    });
-  }
-
+    ngOnInit(): void {
+        this.getData.getData().subscribe((data) => {
+            console.log(data.expertise);
+            this.expertises = data.expertise;
+        });
+    }
 }

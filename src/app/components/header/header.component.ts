@@ -1,21 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import { ServicesService } from 'src/app/services/services.service';
+import { portfolioService } from 'src/app/services/portfolio.service';
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+    selector: 'app-header',
+    templateUrl: './header.component.html',
+    styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
-  mydata:any;
+    person: any;
 
-  constructor(private getdata:ServicesService) { }
+    constructor(private getPerson: portfolioService) {}
 
-  ngOnInit(): void {
-    this.getdata.getdata().subscribe(data=>{
-      console.log(data);
-      this.mydata=data;
-    });
-  }
-
+    ngOnInit(): void {
+        this.getPerson.getPerson().subscribe((data) => {
+            console.log(data);
+            this.person = data[0];
+        });
+    }
 }
