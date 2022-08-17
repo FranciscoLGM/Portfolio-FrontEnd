@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Person } from 'src/app/models/person';
 import { portfolioService } from 'src/app/services/portfolio.service';
 
 @Component({
@@ -12,8 +13,12 @@ export class HeaderComponent implements OnInit {
     constructor(private getPerson: portfolioService) {}
 
     ngOnInit(): void {
+        this.getPersonData();
+    }
+
+    private getPersonData() {
         this.getPerson.getPerson().subscribe((data) => {
-            console.log(data);
+            // console.log(data);
             this.person = data[0];
         });
     }

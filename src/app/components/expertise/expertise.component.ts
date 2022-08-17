@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Expertise } from 'src/app/models/expertise';
 import { portfolioService } from 'src/app/services/portfolio.service';
 
 @Component({
@@ -7,14 +8,18 @@ import { portfolioService } from 'src/app/services/portfolio.service';
     styleUrls: ['./expertise.component.css'],
 })
 export class ExpertiseComponent implements OnInit {
-    expertises: any;
+    expertises: Expertise[] = [];
 
-    constructor(private getData: portfolioService) {}
+    constructor(private getExpertise: portfolioService) {}
 
     ngOnInit(): void {
-        this.getData.getData().subscribe((data) => {
-            console.log(data.expertise);
-            this.expertises = data.expertise;
+        this.getExpertiseData();
+    }
+
+    private getExpertiseData() {
+        this.getExpertise.getExpertise().subscribe((data) => {
+            // console.log(data);
+            this.expertises = data;
         });
     }
 }

@@ -1,21 +1,16 @@
 <section class="about container" id="about">
     <article class="about-avatar">
         <picture>
-            <img src="../../../assets/images/avatar.svg" alt="" />
+            <img [src]="person.imageProfile" alt="Imagen de Perfil" />
         </picture>
     </article>
 
     <article class="about__container">
         <h2 class="about-title">
-            Hola, soy Francisco, encantado de conocerte! <span>👋</span>
+            Hola, soy {{ person.name }}, encantado de conocerte! <span>👋</span>
         </h2>
         <p class="about-paragraph">
-            Soy un Diseñador fotográfico y desarrollador Full Stack de Buenos
-            Aires, Argentina. Con una formación en el campo de la programación,
-            con una amplia experiencia en el desarrollo de aplicaciones web. Me
-            encanta trabajar en equipo y aprender nuevas tecnologías. Me gusta
-            mucho la tecnología y la programación, por eso me gustaría que me
-            formases como desarrollador web.
+            {{ person.aboutDescription }}
         </p>
     </article>
 </section>

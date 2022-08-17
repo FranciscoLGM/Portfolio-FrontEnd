@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Certification } from 'src/app/models/certification';
+import { Education } from 'src/app/models/education';
 import { portfolioService } from 'src/app/services/portfolio.service';
 
 @Component({
@@ -7,14 +9,30 @@ import { portfolioService } from 'src/app/services/portfolio.service';
     styleUrls: ['./education.component.css'],
 })
 export class EducationComponent implements OnInit {
-    educations: any;
+    educations: Education[] = [];
+    certifications: Certification[] = [];
 
-    constructor(private getData: portfolioService) {}
+    constructor(
+        private getEducation: portfolioService,
+        private getCertification: portfolioService
+    ) {}
 
     ngOnInit(): void {
-        this.getData.getData().subscribe((data) => {
-            console.log(data.education);
-            this.educations = data.education;
+        this.getEducationData();
+        this.getCertificationData();
+    }
+
+    private getEducationData() {
+        this.getEducation.getEducation().subscribe((data) => {
+            // console.log(data);
+            this.educations = data;
+        });
+    }
+
+    private getCertificationData() {
+        this.getCertification.getCertification().subscribe((data) => {
+            // console.log(data);
+            this.certifications = data;
         });
     }
 }

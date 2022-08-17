@@ -1,101 +1,13 @@
 <section class="container" id="skills">
     <h2 class="skills-title">Mis Habilidades</h2>
-    <article>
-        <p class="skill-title">HTML</p>
+    <article *ngFor="let skill of skills">
+        <p class="skill-title">{{ skill.skill }}</p>
         <div class="skill-light-grey">
             <div
                 class="skill-container skill-center skill-padding-small skill-dark-grey"
-                style="width: 95%"
+                [style.width]="skill.rate + '%'"
             >
-                95%
-            </div>
-        </div>
-    </article>
-    <article>
-        <p class="skill-title">CSS</p>
-        <div class="skill-light-grey">
-            <div
-                class="skill-container skill-center skill-padding-small skill-dark-grey"
-                style="width: 85%"
-            >
-                85%
-            </div>
-        </div>
-    </article>
-    <article>
-        <p class="skill-title">JavaScript</p>
-        <div class="skill-light-grey">
-            <div
-                class="skill-container skill-center skill-padding-small skill-dark-grey"
-                style="width: 75%"
-            >
-                75%
-            </div>
-        </div>
-    </article>
-    <article>
-        <p class="skill-title">Angular</p>
-        <div class="skill-light-grey">
-            <div
-                class="skill-container skill-center skill-padding-small skill-dark-grey"
-                style="width: 75%"
-            >
-                70%
-            </div>
-        </div>
-    </article>
-    <article>
-        <p class="skill-title">Vue.js</p>
-        <div class="skill-light-grey">
-            <div
-                class="skill-container skill-center skill-padding-small skill-dark-grey"
-                style="width: 75%"
-            >
-                75%
-            </div>
-        </div>
-    </article>
-    <article>
-        <p class="skill-title">Node.js</p>
-        <div class="skill-light-grey">
-            <div
-                class="skill-container skill-center skill-padding-small skill-dark-grey"
-                style="width: 70%"
-            >
-                70%
-            </div>
-        </div>
-    </article>
-    <article>
-        <p class="skill-title">Python</p>
-        <div class="skill-light-grey">
-            <div
-                class="skill-container skill-center skill-padding-small skill-dark-grey"
-                style="width: 70%"
-            >
-                70%
-            </div>
-        </div>
-    </article>
-    <article>
-        <p class="skill-title">Django</p>
-        <div class="skill-light-grey">
-            <div
-                class="skill-container skill-center skill-padding-small skill-dark-grey"
-                style="width: 60%"
-            >
-                60%
-            </div>
-        </div>
-    </article>
-    <article>
-        <p class="skill-title">Java</p>
-        <div class="skill-light-grey">
-            <div
-                class="skill-container skill-center skill-padding-small skill-dark-grey"
-                style="width: 60%"
-            >
-                60%
+                {{ skill.rate }}%
             </div>
         </div>
     </article>

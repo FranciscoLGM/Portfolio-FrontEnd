@@ -5,126 +5,25 @@
         </article>
 
         <section class="projects-grid">
-            <article class="project-item">
+            <article class="project-item" *ngFor="let project of projects">
                 <figure>
                     <a
                         class="project-link"
-                        href="https://codepen.io/franciscolopezg/full/NWXLdaN"
+                        [href]="project.urlProject"
                         target="_blank"
                     >
                         <img
-                            src="https://drive.google.com/uc?export=view&id=1v4oaGKlH4ofLoCy9rVCxhgbj-WImlGqS"
-                            alt="Página de tributo a Anthony Bourdain"
+                            [src]="project.imageProject"
+                            alt="{{ project.description }}"
                         />
                         <figcaption class="project-title">
                             <span class="code">&lt;</span>
-                            Página Tributo
-                            <span class="code">&#47;&gt;</span>
-                        </figcaption>
-                    </a>
-                </figure>
-            </article>
-
-            <article class="project-item">
-                <figure>
-                    <a
-                        class="project-link"
-                        href="https://codepen.io/franciscolopezg/full/NWXLdaN"
-                        target="_blank"
-                    >
-                        <img
-                            src="https://drive.google.com/uc?export=view&id=1v4oaGKlH4ofLoCy9rVCxhgbj-WImlGqS"
-                            alt="Página de tributo a Anthony Bourdain"
-                        />
-                        <figcaption class="project-title">
-                            <span class="code">&lt;</span>
-                            Página Tributo
-                            <span class="code">&#47;&gt;</span>
-                        </figcaption>
-                    </a>
-                </figure>
-            </article>
-
-            <article class="project-item">
-                <figure>
-                    <a
-                        class="project-link"
-                        href="https://codepen.io/franciscolopezg/full/NWXLdaN"
-                        target="_blank"
-                    >
-                        <img
-                            src="https://drive.google.com/uc?export=view&id=1v4oaGKlH4ofLoCy9rVCxhgbj-WImlGqS"
-                            alt="Página de tributo a Anthony Bourdain"
-                        />
-                        <figcaption class="project-title">
-                            <span class="code">&lt;</span>
-                            Página Tributo
-                            <span class="code">&#47;&gt;</span>
-                        </figcaption>
-                    </a>
-                </figure>
-            </article>
-
-            <article class="project-item">
-                <figure>
-                    <a
-                        class="project-link"
-                        href="https://codepen.io/franciscolopezg/full/NWXLdaN"
-                        target="_blank"
-                    >
-                        <img
-                            src="https://drive.google.com/uc?export=view&id=1v4oaGKlH4ofLoCy9rVCxhgbj-WImlGqS"
-                            alt="Página de tributo a Anthony Bourdain"
-                        />
-                        <figcaption class="project-title">
-                            <span class="code">&lt;</span>
-                            Página Tributo
-                            <span class="code">&#47;&gt;</span>
-                        </figcaption>
-                    </a>
-                </figure>
-            </article>
-
-            <article class="project-item">
-                <figure>
-                    <a
-                        class="project-link"
-                        href="https://codepen.io/franciscolopezg/full/NWXLdaN"
-                        target="_blank"
-                    >
-                        <img
-                            src="https://drive.google.com/uc?export=view&id=1v4oaGKlH4ofLoCy9rVCxhgbj-WImlGqS"
-                            alt="Página de tributo a Anthony Bourdain"
-                        />
-                        <figcaption class="project-title">
-                            <span class="code">&lt;</span>
-                            Página Tributo
-                            <span class="code">&#47;&gt;</span>
-                        </figcaption>
-                    </a>
-                </figure>
-            </article>
-
-            <article class="project-item">
-                <figure>
-                    <a
-                        class="project-link"
-                        href="https://codepen.io/franciscolopezg/full/NWXLdaN"
-                        target="_blank"
-                    >
-                        <img
-                            src="https://drive.google.com/uc?export=view&id=1v4oaGKlH4ofLoCy9rVCxhgbj-WImlGqS"
-                            alt="Página de tributo a Anthony Bourdain"
-                        />
-                        <figcaption class="project-title">
-                            <span class="code">&lt;</span>
-                            Página Tributo
+                            {{ project.title }}
                             <span class="code">&#47;&gt;</span>
                         </figcaption>
                     </a>
                 </figure>
             </article>
         </section>
-        
     </section>
 </section>

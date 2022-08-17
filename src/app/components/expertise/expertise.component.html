@@ -7,17 +7,17 @@
                 <picture>
                     <img
                         class="img-logo"
-                        [src]="expertise.img"
-                        alt="Logo Expertise 1"
+                        [src]="expertise.imageCompany"
+                        alt="Logo de la compañia"
                     />
                 </picture>
             </section>
 
             <section>
-                <h3 class="card-subtitle">{{ expertise.title }}</h3>
+                <h3 class="card-subtitle">{{ expertise.position }}</h3>
                 <p class="card-work">{{ expertise.company }}</p>
                 <p class="card-year">
-                    {{ expertise.start }} - {{ expertise.end }}
+                    {{ expertise.inicio }} - {{ expertise.fin }}
                 </p>
                 <p class="card-city">
                     {{ expertise.city }}
