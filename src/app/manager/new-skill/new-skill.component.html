@@ -1,0 +1,62 @@
+<app-navbar></app-navbar>
+<section>
+    <div class="container">
+        <article>
+            <h2 class="title-form">{{ title }}</h2>
+        </article>
+
+        <article>
+            <form [formGroup]="skillForm" (ngSubmit)="postSkillData()">
+                <fieldset class="form-group">
+                    <label for="skill">Habilidad</label>
+                    <input
+                        type="text"
+                        name="skill"
+                        id="skill"
+                        required
+                        placeholder="Ingresa tú habilidad"
+                        formControlName="skill"
+                    />
+                    <label
+                        class="alert"
+                        *ngIf="
+                            skillForm.get('skill')?.hasError('required') &&
+                            skillForm.get('skill')?.touched
+                        "
+                    >
+                        Debes ingresar una habilidad
+                    </label>
+                </fieldset>
+
+                <fieldset>
+                    <label for="rate">Porcentaje</label>
+                    <input
+                        type="number"
+                        name="rate"
+                        id="rate"
+                        min="0"
+                        max="100"
+                        required
+                        placeholder="Ingresa el porcentaje de conocimiento"
+                        formControlName="rate"
+                    />
+                    <label
+                        class="alert"
+                        *ngIf="
+                            skillForm.get('rate')?.hasError('required') &&
+                            skillForm.get('rate')?.touched
+                        "
+                    >
+                        Debes ingresar un porcentaje
+                    </label>
+                </fieldset>
+                <fieldset>
+                    <button type="submit" [disabled]="!skillForm.valid">
+                        Crear
+                    </button>
+                </fieldset>
+            </form>
+        </article>
+    </div>
+</section>
+<app-footer></app-footer>

@@ -1,0 +1,104 @@
+<app-navbar></app-navbar>
+<section>
+    <div class="container">
+        <article>
+            <h2 class="title-form">{{ title }}</h2>
+        </article>
+
+        <article>
+            <form [formGroup]="projectForm" (ngSubmit)="postProjectData()">
+                <fieldset class="form-group">
+                    <label for="title">Título</label>
+                    <input
+                        type="text"
+                        name="title"
+                        id="title"
+                        required
+                        placeholder="Ingresa el título del proyecto"
+                        formControlName="title"
+                    />
+                    <label
+                        class="alert"
+                        *ngIf="
+                            projectForm.get('title')?.hasError('required') &&
+                            projectForm.get('title')?.touched
+                        "
+                    >
+                        Debes ingresar el título del proyecto
+                    </label>
+                </fieldset>
+                <fieldset>
+                    <label for="description">Descripción</label>
+                    <input
+                        type="text"
+                        name="description"
+                        id="description"
+                        required
+                        placeholder="Ingresa una descripción breve del proyecto"
+                        formControlName="description"
+                    />
+                    <label
+                        class="alert"
+                        *ngIf="
+                            projectForm
+                                .get('description')
+                                ?.hasError('required') &&
+                            projectForm.get('description')?.touched
+                        "
+                    >
+                    </label>
+                </fieldset>
+                <fieldset>
+                    <label for="imageProject">Imágen del proyecto</label>
+                    <input
+                        type="text"
+                        name="imageProject"
+                        id="imageProject"
+                        required
+                        placeholder="Ingresa la ruta de la imágen del proyecto"
+                        formControlName="imageProject"
+                    />
+                    <label
+                        class="alert"
+                        *ngIf="
+                            projectForm
+                                .get('imageProject')
+                                ?.hasError('required') &&
+                            projectForm.get('imageProject')?.touched
+                        "
+                    >
+                        Debes ingresar una ruta de imágen del proyecto
+                    </label>
+                </fieldset>
+                <fieldset>
+                    <label for="urlProject">URL del proyecto</label>
+                    <input
+                        type="text"
+                        name="urlProject"
+                        id="urlProject"
+                        required
+                        placeholder="Ingresa la ruta de tú proyecto"
+                        formControlName="urlProject"
+                    />
+                    <label
+                        class="alert"
+                        *ngIf="
+                            projectForm
+                                .get('urlProject')
+                                ?.hasError('required') &&
+                            projectForm.get('urlProject')?.touched
+                        "
+                    >
+                        Debes ingresar una ruta de tú proyecto
+                    </label>
+                </fieldset>
+                <fieldset>
+                    <button type="submit" [disabled]="!projectForm.valid">
+                        Crear
+                    </button>
+                </fieldset>
+            </form>
+        </article>
+    </div>
+</section>
+<app-footer></app-footer>

@@ -1,0 +1,166 @@
+<app-navbar></app-navbar>
+<section>
+    <div class="container">
+        <article>
+            <h2 class="title-form">{{ title }}</h2>
+        </article>
+
+        <article>
+            <form [formGroup]="expertiseForm" (ngSubmit)="postExpertiseData()">
+                <fieldset class="form-group">
+                    <label for="position">Posición</label>
+                    <input
+                        type="text"
+                        name="position"
+                        id="position"
+                        required
+                        placeholder="Ingresa tú Posición"
+                        formControlName="position"
+                    />
+                    <label
+                        class="alert"
+                        *ngIf="
+                            expertiseForm
+                                .get('position')
+                                ?.hasError('required') &&
+                            expertiseForm.get('position')?.touched
+                        "
+                    >
+                        Debes ingresar una posición
+                    </label>
+                </fieldset>
+                <fieldset>
+                    <label for="company">Nombre de la empresa</label>
+                    <input
+                        type="text"
+                        name="company"
+                        id="company"
+                        required
+                        placeholder="Ingresa el nombre de la Empresa"
+                        formControlName="company"
+                    />
+                    <label
+                        class="alert"
+                        *ngIf="
+                            expertiseForm
+                                .get('company')
+                                ?.hasError('required') &&
+                            expertiseForm.get('company')?.touched
+                        "
+                    >
+                        Debes ingresar una empresa
+                    </label>
+                </fieldset>
+                <fieldset>
+                    <label for="inicio">Fecha de inicio</label>
+                    <input
+                        type="text"
+                        name="inicio"
+                        id="inicio"
+                        required
+                        placeholder="Ingresa la fecha de inicio de tu experiencia"
+                        formControlName="inicio"
+                    />
+                    <label
+                        class="alert"
+                        *ngIf="
+                            expertiseForm.get('inicio')?.hasError('required') &&
+                            expertiseForm.get('inicio')?.touched
+                        "
+                    >
+                        Debes ingresar una fecha de inicio
+                    </label>
+                </fieldset>
+                <fieldset>
+                    <label for="fin">Fecha de finalización</label>
+                    <input
+                        type="text"
+                        name="fin"
+                        id="fin"
+                        required
+                        placeholder="Ingresa la fecha de finalización de tu experiencia"
+                        formControlName="fin"
+                    />
+                    <label
+                        class="alert"
+                        *ngIf="
+                            expertiseForm.get('fin')?.hasError('required') &&
+                            expertiseForm.get('fin')?.touched
+                        "
+                    >
+                        Debes ingresar una fecha de finalización
+                    </label>
+                </fieldset>
+                <fieldset>
+                    <label for="city">Ciudad</label>
+                    <input
+                        type="text"
+                        name="city"
+                        id="city"
+                        required
+                        placeholder="Ingresa la ciudad donde trabajaste"
+                        formControlName="city"
+                    />
+                    <label
+                        class="alert"
+                        *ngIf="
+                            expertiseForm.get('city')?.hasError('required') &&
+                            expertiseForm.get('city')?.touched
+                        "
+                    >
+                        Debes ingresar una ciudad
+                    </label>
+                </fieldset>
+                <fieldset>
+                    <label for="imageCompany">Imágen de la empresa</label>
+                    <input
+                        type="text"
+                        name="imageCompany"
+                        id="imageCompany"
+                        required
+                        placeholder="Ingresa la ruta de la imágen de la empresa"
+                        formControlName="imageCompany"
+                    />
+                    <label
+                        class="alert"
+                        *ngIf="
+                            expertiseForm
+                                .get('imageCompany')
+                                ?.hasError('required') &&
+                            expertiseForm.get('imageCompany')?.touched
+                        "
+                    >
+                        Debes ingresar una ruta de imágen
+                    </label>
+                </fieldset>
+                <fieldset>
+                    <label for="description">Descripción de la posición</label>
+                    <textarea
+                        name="description"
+                        id="description"
+                        required
+                        placeholder="Describe tú experiencia"
+                        formControlName="description"
+                    ></textarea>
+                    <label
+                        class="alert"
+                        *ngIf="
+                            expertiseForm
+                                .get('description')
+                                ?.hasError('required') &&
+                            expertiseForm.get('description')?.touched
+                        "
+                    >
+                        Debes ingresar una descripción
+                    </label>
+                </fieldset>
+                <fieldset>
+                    <button type="submit" [disabled]="!expertiseForm.valid">
+                        Crear
+                    </button>
+                </fieldset>
+            </form>
+        </article>
+    </div>
+</section>
+<app-footer></app-footer>

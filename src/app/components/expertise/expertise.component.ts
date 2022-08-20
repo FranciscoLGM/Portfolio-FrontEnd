@@ -10,14 +10,14 @@ import { portfolioService } from 'src/app/services/portfolio.service';
 export class ExpertiseComponent implements OnInit {
     expertises: Expertise[] = [];
 
-    constructor(private getExpertise: portfolioService) {}
+    constructor(private portfolioService: portfolioService) {}
 
     ngOnInit(): void {
         this.getExpertiseData();
     }
 
     private getExpertiseData() {
-        this.getExpertise.getExpertise().subscribe((data) => {
+        this.portfolioService.getExpertise().subscribe((data) => {
             // console.log(data);
             this.expertises = data;
         });

@@ -10,13 +10,13 @@ import { portfolioService } from 'src/app/services/portfolio.service';
 export class SkillsComponent implements OnInit {
     skills: Skill[] = [];
 
-    constructor(private getSkill: portfolioService) {}
+    constructor(private portfolioService: portfolioService) {}
 
     ngOnInit(): void {
         this.getSkillData();
     }
     private getSkillData() {
-        this.getSkill.getSkill().subscribe((data) => {
+        this.portfolioService.getSkill().subscribe((data) => {
             // console.log(data);
             this.skills = data;
         });

@@ -10,14 +10,14 @@ import { portfolioService } from 'src/app/services/portfolio.service';
 export class ProjectsComponent implements OnInit {
     projects: Project[] = [];
 
-    constructor(private getProject: portfolioService) {}
+    constructor(private portfolioService: portfolioService) {}
 
     ngOnInit(): void {
         this.getProjectData();
     }
 
     private getProjectData() {
-        this.getProject.getProject().subscribe((data) => {
+        this.portfolioService.getProject().subscribe((data) => {
             // console.log(data);
             this.projects = data;
         });

@@ -1,0 +1,165 @@
+<app-navbar></app-navbar>
+<section>
+    <div class="container">
+        <article>
+            <h2 class="title-form">{{ title }}</h2>
+        </article>
+
+        <article>
+            <form [formGroup]="educationForm" (ngSubmit)="postEducationData()">
+                <fieldset class="form-group">
+                    <label for="degree">Título</label>
+                    <input
+                        type="text"
+                        name="degree"
+                        id="degree"
+                        required
+                        placeholder="Ingresa tú título"
+                        formControlName="degree"
+                    />
+                    <label
+                        class="alert"
+                        *ngIf="
+                            educationForm.get('degree')?.hasError('required') &&
+                            educationForm.get('degree')?.touched
+                        "
+                    >
+                        Debes ingresar un título
+                    </label>
+                </fieldset>
+                <fieldset>
+                    <label for="university">Universidad</label>
+                    <input
+                        type="text"
+                        name="university"
+                        id="university"
+                        required
+                        placeholder="Ingresa el nombre de la Universidad"
+                        formControlName="university"
+                    />
+                    <label
+                        class="alert"
+                        *ngIf="
+                            educationForm
+                                .get('university')
+                                ?.hasError('required') &&
+                            educationForm.get('university')?.touched
+                        "
+                    >
+                    </label>
+                </fieldset>
+                <fieldset>
+                    <label for="inicio">Fecha de inicio</label>
+                    <input
+                        type="text"
+                        name="inicio"
+                        id="inicio"
+                        required
+                        placeholder="Ingresa la fecha de inicio de la carrera"
+                        formControlName="inicio"
+                    />
+                    <label
+                        class="alert"
+                        *ngIf="
+                            educationForm.get('inicio')?.hasError('required') &&
+                            educationForm.get('inicio')?.touched
+                        "
+                    >
+                        Debes ingresar una fecha de inicio
+                    </label>
+                </fieldset>
+                <fieldset>
+                    <label for="fin">Fecha de finalización</label>
+                    <input
+                        type="text"
+                        name="fin"
+                        id="fin"
+                        required
+                        placeholder="Ingresa la fecha de finalización de la carrera"
+                        formControlName="fin"
+                    />
+                    <label
+                        class="alert"
+                        *ngIf="
+                            educationForm.get('fin')?.hasError('required') &&
+                            educationForm.get('fin')?.touched
+                        "
+                    >
+                        Debes ingresar una fecha de finalización
+                    </label>
+                </fieldset>
+                <fieldset>
+                    <label for="city">Ciudad</label>
+                    <input
+                        type="text"
+                        name="city"
+                        id="city"
+                        required
+                        placeholder="Ingresa la ciudad donde trabajaste"
+                        formControlName="city"
+                    />
+                    <label
+                        class="alert"
+                        *ngIf="
+                            educationForm.get('city')?.hasError('required') &&
+                            educationForm.get('city')?.touched
+                        "
+                    >
+                        Debes ingresar una ciudad
+                    </label>
+                </fieldset>
+                <fieldset>
+                    <label for="imageUniversity"
+                        >Imágen de la Universidad</label
+                    >
+                    <input
+                        type="text"
+                        name="imageUniversity"
+                        id="imageUniversity"
+                        required
+                        placeholder="Ingresa la ruta de la imágen de la universidad"
+                        formControlName="imageUniversity"
+                    />
+                    <label
+                        class="alert"
+                        *ngIf="
+                            educationForm
+                                .get('imageUniversity')
+                                ?.hasError('required') &&
+                            educationForm.get('imageUniversity')?.touched
+                        "
+                    >
+                        Debes ingresar una ruta de imágen
+                    </label>
+                </fieldset>
+                <fieldset>
+                    <label for="description">Descripción de la carrera</label>
+                    <textarea
+                        name="description"
+                        id="description"
+                        required
+                        placeholder="Describe tú experiencia"
+                        formControlName="description"
+                    ></textarea>
+                    <label
+                        class="alert"
+                        *ngIf="
+                            educationForm
+                                .get('description')
+                                ?.hasError('required') &&
+                            educationForm.get('description')?.touched
+                        "
+                    >
+                        Debes ingresar una descripción
+                    </label>
+                </fieldset>
+                <fieldset>
+                    <button type="submit" [disabled]="!educationForm.valid">
+                        Crear
+                    </button>
+                </fieldset>
+            </form>
+        </article>
+    </div>
+</section>
+<app-footer></app-footer>

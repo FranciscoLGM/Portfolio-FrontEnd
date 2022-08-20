@@ -12,10 +12,7 @@ export class EducationComponent implements OnInit {
     educations: Education[] = [];
     certifications: Certification[] = [];
 
-    constructor(
-        private getEducation: portfolioService,
-        private getCertification: portfolioService
-    ) {}
+    constructor(private portfolioService: portfolioService) {}
 
     ngOnInit(): void {
         this.getEducationData();
@@ -23,14 +20,14 @@ export class EducationComponent implements OnInit {
     }
 
     private getEducationData() {
-        this.getEducation.getEducation().subscribe((data) => {
+        this.portfolioService.getEducation().subscribe((data) => {
             // console.log(data);
             this.educations = data;
         });
     }
 
     private getCertificationData() {
-        this.getCertification.getCertification().subscribe((data) => {
+        this.portfolioService.getCertification().subscribe((data) => {
             // console.log(data);
             this.certifications = data;
         });
