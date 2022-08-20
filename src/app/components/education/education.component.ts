@@ -9,6 +9,8 @@ import { portfolioService } from 'src/app/services/portfolio.service';
     styleUrls: ['./education.component.css'],
 })
 export class EducationComponent implements OnInit {
+    title = 'Educación';
+    title2 = 'Licencias y Certificaciones';
     educations: Education[] = [];
     certifications: Certification[] = [];
 

@@ -98,6 +98,12 @@ a {
     box-shadow: var(--bs-card-box-shadow);
 }
 
+.card-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .card-title {
     font-size: var(--bs-font-size-h2);
     font-weight: 700;
@@ -105,6 +111,13 @@ a {
     margin: 3rem 0;
     padding: 3rem 0;
     text-align: center;
+}
+
+.fa-plus {
+    color: var(--bs-text-color-dark);
+    font-size: 3rem;
+    font-weight: 300;
+    cursor: pointer;
 }
 
 .card-container {

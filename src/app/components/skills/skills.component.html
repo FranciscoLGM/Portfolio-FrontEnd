@@ -1,5 +1,8 @@
 <section class="container" id="skills">
-    <h2 class="skills-title">Mis Habilidades</h2>
+    <article class="card-flex">
+        <h2 class="card-title">{{ title }}</h2>
+        <i routerLink="/nueva-habilidad" class="fa-solid fa-plus"></i>
+    </article>
     <article *ngFor="let skill of skills">
         <p class="skill-title">{{ skill.skill }}</p>
         <div class="skill-light-grey">

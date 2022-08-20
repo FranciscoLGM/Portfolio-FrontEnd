@@ -1,5 +1,8 @@
 <section class="container" id="expertise">
-    <h2 class="card-title">Experiencia</h2>
+    <article class="card-flex">
+        <h2 class="card-title">{{ title }}</h2>
+        <i routerLink="/nueva-experiencia" class="fa-solid fa-plus"></i>
+    </article>
 
     <section class="card" *ngFor="let expertise of expertises">
         <article class="card-container">

@@ -1,6 +1,9 @@
 <section class="container" id="education">
     <article>
-        <h2 class="card-title">Educación</h2>
+        <article class="card-flex">
+            <h2 class="card-title">{{ title }}</h2>
+            <i routerLink="/nueva-educacion" class="fa-solid fa-plus"></i>
+        </article>
 
         <section class="card" *ngFor="let education of educations">
             <article class="card-container">
@@ -32,7 +35,10 @@
     </article>
 
     <article>
-        <h2 class="card-title">Licencias y certificaciones</h2>
+        <article class="card-flex">
+            <h2 class="card-title">{{ title2 }}</h2>
+            <i routerLink="/nueva-certificacion" class="fa-solid fa-plus"></i>
+        </article>
 
         <section class="card" *ngFor="let certification of certifications">
             <article class="card-container">

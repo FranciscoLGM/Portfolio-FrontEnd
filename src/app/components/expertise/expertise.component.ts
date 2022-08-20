@@ -8,6 +8,7 @@ import { portfolioService } from 'src/app/services/portfolio.service';
     styleUrls: ['./expertise.component.css'],
 })
 export class ExpertiseComponent implements OnInit {
+    title = 'Experiencia';
     expertises: Expertise[] = [];
 
     constructor(private portfolioService: portfolioService) {}

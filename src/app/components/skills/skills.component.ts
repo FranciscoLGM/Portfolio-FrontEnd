@@ -8,6 +8,7 @@ import { portfolioService } from 'src/app/services/portfolio.service';
     styleUrls: ['./skills.component.css'],
 })
 export class SkillsComponent implements OnInit {
+    title = 'Mis Habilidades';
     skills: Skill[] = [];
 
     constructor(private portfolioService: portfolioService) {}
