@@ -30,6 +30,18 @@
                         {{ education.description }}
                     </p>
                 </section>
+                <article>
+                    <div class="update-delete">
+                        <i
+                            class="fa-solid fa-pen-to-square"
+                            [routerLink]="['/editar-educacion', education.id]"
+                        ></i>
+                        <i
+                            (click)="deleteEducationData(education.id)"
+                            class="fa-solid fa-trash-can"
+                        ></i>
+                    </div>
+                </article>
             </article>
         </section>
     </article>
@@ -65,6 +77,21 @@
                         {{ certification.description }}
                     </p>
                 </section>
+                <article>
+                    <div class="update-delete">
+                        <i
+                            class="fa-solid fa-pen-to-square"
+                            [routerLink]="[
+                                '/editar-certificacion',
+                                certification.id
+                            ]"
+                        ></i>
+                        <i
+                            (click)="deleteCertificationData(certification.id)"
+                            class="fa-solid fa-trash-can"
+                        ></i>
+                    </div>
+                </article>
             </article>
         </section>
     </article>

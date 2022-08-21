@@ -23,6 +23,7 @@ import { NewExpertiseComponent } from './manager/new-expertise/new-expertise.com
 import { NewEducationComponent } from './manager/new-education/new-education.component';
 import { NewCertificationComponent } from './manager/new-certification/new-certification.component';
 import { NewProjectComponent } from './manager/new-project/new-project.component';
+import { NewProfileComponent } from './manager/new-profile/new-profile.component';
 
 @NgModule({
     declarations: [
@@ -43,6 +44,7 @@ import { NewProjectComponent } from './manager/new-project/new-project.component
         NewEducationComponent,
         NewCertificationComponent,
         NewProjectComponent,
+        NewProfileComponent,
     ],
     imports: [
         BrowserModule,

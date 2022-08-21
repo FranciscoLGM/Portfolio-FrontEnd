@@ -7,6 +7,19 @@
 
         <section class="projects-grid">
             <article class="project-item" *ngFor="let project of projects">
+                <article class="card-flex">
+                    <div></div>
+                    <div class="update-delete">
+                        <i
+                            class="fa-solid fa-pen-to-square"
+                            [routerLink]="['/editar-proyecto', project.id]"
+                        ></i>
+                        <i
+                            (click)="deleteProjectData(project.id)"
+                            class="fa-solid fa-trash-can"
+                        ></i>
+                    </div>
+                </article>
                 <figure>
                     <a
                         class="project-link"

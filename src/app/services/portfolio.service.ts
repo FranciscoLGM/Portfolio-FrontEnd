@@ -18,6 +18,10 @@ export class portfolioService {
 
     // Metodos para crear un nuevo registro
 
+    postPerson(person: Person): Observable<any> {
+        return this.http.post(`${this.baseURL}/new/person`, person);
+    }
+
     postExpertise(expertise: Expertise): Observable<any> {
         return this.http.post(`${this.baseURL}/new/expertise`, expertise);
     }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Education } from 'src/app/models/education';
 import { portfolioService } from 'src/app/services/portfolio.service';
@@ -13,12 +13,14 @@ import { portfolioService } from 'src/app/services/portfolio.service';
 export class NewEducationComponent implements OnInit {
     title = 'Nueva Educación';
     educationForm: FormGroup;
+    id: string;
 
     constructor(
         private portfolioService: portfolioService,
         private router: Router,
         private toastr: ToastrService,
-        private formBuilder: FormBuilder
+        private formBuilder: FormBuilder,
+        private activeRoute: ActivatedRoute
     ) {
         this.educationForm = this.formBuilder.group({
             degree: ['', Validators.required],
@@ -29,9 +31,12 @@ export class NewEducationComponent implements OnInit {
             imageUniversity: ['', Validators.required],
             description: ['', Validators.required],
         });
+        this.id = this.activeRoute.snapshot.paramMap.get('id')!; // ! para que no sea null
     }
 
-    ngOnInit(): void {}
+    ngOnInit(): void {
+        this.isUpdate();
+    }
 
     postEducationData() {
         const education: Education = {
@@ -42,20 +47,57 @@ export class NewEducationComponent implements OnInit {
             city: this.educationForm.get('city')?.value,
             imageUniversity: this.educationForm.get('imageUniversity')?.value,
             description: this.educationForm.get('description')?.value,
+            id: Number(this.id),
         };
-        console.log(this.educationForm);
-        this.portfolioService.postEducation(education).subscribe({
-            next: (response) => {
-                this.toastr.success(
-                    'La Educación fue creada con éxito',
-                    'Educación Creada'
-                );
-                this.router.navigate(['/']);
-            },
-            error: (err) => {
-                this.toastr.error('Error al crear la Educación', 'Error');
-                console.error(err);
-            },
-        });
+        if (this.id !== null) {
+            // Actualizar skill
+            this.portfolioService.putEducation(education).subscribe({
+                next: (response) => {
+                    this.toastr.info(
+                        'Educación actualizada con éxito',
+                        'Educación Actualizada'
+                    );
+                    this.router.navigate(['/']);
+                },
+            });
+        } else {
+            console.log(this.educationForm);
+            this.portfolioService.postEducation(education).subscribe({
+                next: (response) => {
+                    this.toastr.success(
+                        'La Educación fue creada con éxito',
+                        'Educación Creada'
+                    );
+                    this.router.navigate(['/']);
+                },
+                error: (err) => {
+                    this.toastr.error('Error al crear la Educación', 'Error');
+                    console.error(err);
+                },
+            });
+        }
+    }
+
+    isUpdate() {
+        if (this.id !== null) {
+            this.title = 'Actualizar Educación';
+            this.portfolioService.getEducationById(this.id).subscribe({
+                next: (response) => {
+                    this.educationForm.patchValue({
+                        degree: response.degree,
+                        university: response.university,
+                        inicio: response.inicio,
+                        fin: response.fin,
+                        city: response.city,
+                        imageUniversity: response.imageUniversity,
+                        description: response.description,
+                    });
+                },
+                error: (err) => {
+                    this.toastr.error('Error al obtener la Educación', 'Error');
+                    console.error(err);
+                },
+            });
+        }
     }
 }

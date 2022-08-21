@@ -29,6 +29,18 @@
                     {{ expertise.description }}
                 </p>
             </section>
+            <article>
+                <div class="update-delete">
+                    <i
+                        class="fa-solid fa-pen-to-square"
+                        [routerLink]="['/editar-experiencia', expertise.id]"
+                    ></i>
+                    <i
+                        (click)="deleteExpertiseData(expertise.id)"
+                        class="fa-solid fa-trash-can"
+                    ></i>
+                </div>
+            </article>
         </article>
     </section>
 </section>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Certification } from 'src/app/models/certification';
 import { portfolioService } from 'src/app/services/portfolio.service';
@@ -13,12 +13,14 @@ import { portfolioService } from 'src/app/services/portfolio.service';
 export class NewCertificationComponent implements OnInit {
     title = 'Nueva Certificación';
     certificationForm: FormGroup;
+    id: string;
 
     constructor(
         private portfolioService: portfolioService,
         private router: Router,
         private toastr: ToastrService,
-        private formBuilder: FormBuilder
+        private formBuilder: FormBuilder,
+        private activeRoute: ActivatedRoute
     ) {
         this.certificationForm = this.formBuilder.group({
             degree: ['', Validators.required],
@@ -29,9 +31,12 @@ export class NewCertificationComponent implements OnInit {
             imageUniversity: ['', Validators.required],
             description: ['', Validators.required],
         });
+        this.id = this.activeRoute.snapshot.paramMap.get('id')!; // ! para que no sea null
     }
 
-    ngOnInit(): void {}
+    ngOnInit(): void {
+        this.isUpdate();
+    }
 
     postCertificationData() {
         const certification: Certification = {
@@ -43,20 +48,69 @@ export class NewCertificationComponent implements OnInit {
             imageUniversity:
                 this.certificationForm.get('imageUniversity')?.value,
             description: this.certificationForm.get('description')?.value,
+            id: Number(this.id),
         };
-        console.log(this.certificationForm);
-        this.portfolioService.postCertification(certification).subscribe({
-            next: (response) => {
-                this.toastr.success(
-                    'La Certificación fue creada con éxito',
-                    'Certificación Creada'
-                );
-                this.router.navigate(['/']);
-            },
-            error: (err) => {
-                this.toastr.error('Error al crear la Certificación', 'Error');
-                console.error(err);
-            },
-        });
+        if (this.id !== null) {
+            // Actualizar skill
+            this.portfolioService.putCertification(certification).subscribe({
+                next: (response) => {
+                    this.toastr.info(
+                        'Certificación actualizada con éxito',
+                        'Certificación Actualizada'
+                    );
+                    this.router.navigate(['/']);
+                },
+                error: (err) => {
+                    this.toastr.error(
+                        'Error al actualizar la Certificación',
+                        'Error'
+                    );
+                },
+            });
+        } else {
+            console.log(this.certificationForm);
+            this.portfolioService.postCertification(certification).subscribe({
+                next: (response) => {
+                    this.toastr.success(
+                        'La Certificación fue creada con éxito',
+                        'Certificación Creada'
+                    );
+                    this.router.navigate(['/']);
+                },
+                error: (err) => {
+                    this.toastr.error(
+                        'Error al crear la Certificación',
+                        'Error'
+                    );
+                    console.error(err);
+                },
+            });
+        }
+    }
+
+    isUpdate() {
+        if (this.id !== null) {
+            this.title = 'Actualizar Certificación';
+            this.portfolioService.getCertificationById(this.id).subscribe({
+                next: (response) => {
+                    this.certificationForm.patchValue({
+                        degree: response.degree,
+                        university: response.university,
+                        inicio: response.inicio,
+                        fin: response.fin,
+                        city: response.city,
+                        imageUniversity: response.imageUniversity,
+                        description: response.description,
+                    });
+                },
+                error: (err) => {
+                    this.toastr.error(
+                        'Error al obtener la Certificación',
+                        'Error'
+                    );
+                    console.error(err);
+                },
+            });
+        }
     }
 }

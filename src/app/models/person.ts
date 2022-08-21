@@ -1,7 +1,7 @@
 export class Person {
     id?: number;
     name: string;
-    lastName: string;
+    lastname: string;
     profession: string;
     occupation: string;
     heroDescription: string;
@@ -18,7 +18,7 @@ export class Person {
         imageProfile: string
     ) {
         this.name = name;
-        this.lastName = lastName;
+        this.lastname = lastName;
         this.profession = profession;
         this.occupation = occupation;
         this.heroDescription = heroDescription;

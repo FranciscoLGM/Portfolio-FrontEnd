@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Expertise } from 'src/app/models/expertise';
 import { portfolioService } from 'src/app/services/portfolio.service';
@@ -13,12 +13,14 @@ import { portfolioService } from 'src/app/services/portfolio.service';
 export class NewExpertiseComponent implements OnInit {
     title = 'Nueva Experiencia';
     expertiseForm: FormGroup;
+    id: string;
 
     constructor(
         private portfolioService: portfolioService,
         private router: Router,
         private toastr: ToastrService,
-        private formBuilder: FormBuilder
+        private formBuilder: FormBuilder,
+        private activeRoute: ActivatedRoute
     ) {
         this.expertiseForm = this.formBuilder.group({
             position: ['', Validators.required],
@@ -29,9 +31,12 @@ export class NewExpertiseComponent implements OnInit {
             imageCompany: ['', Validators.required],
             description: ['', Validators.required],
         });
+        this.id = this.activeRoute.snapshot.paramMap.get('id')!; // ! para que no sea null
     }
 
-    ngOnInit(): void {}
+    ngOnInit(): void {
+        this.isUpdate();
+    }
 
     postExpertiseData() {
         const expertise: Expertise = {
@@ -42,20 +47,61 @@ export class NewExpertiseComponent implements OnInit {
             city: this.expertiseForm.get('city')?.value,
             imageCompany: this.expertiseForm.get('imageCompany')?.value,
             description: this.expertiseForm.get('description')?.value,
+            id: Number(this.id),
         };
-        console.log(this.expertiseForm);
-        this.portfolioService.postExpertise(expertise).subscribe({
-            next: (response) => {
-                this.toastr.success(
-                    'La Experiencia fue creada con éxito',
-                    'Experiencia Creada'
-                );
-                this.router.navigate(['/']);
-            },
-            error: (err) => {
-                this.toastr.error('Error al crear la Experiencia', 'Error');
-                console.error(err);
-            },
-        });
+
+        if (this.id !== null) {
+            // Actualizar expertise
+            this.portfolioService.putExpertise(expertise).subscribe({
+                next: (response) => {
+                    this.toastr.info(
+                        'Experiencia actualizada con éxito',
+                        'Experiencia Actualizada'
+                    );
+                    this.router.navigate(['/']);
+                },
+            });
+        } else {
+            console.log(this.expertiseForm);
+            this.portfolioService.postExpertise(expertise).subscribe({
+                next: (response) => {
+                    this.toastr.success(
+                        'La Experiencia fue creada con éxito',
+                        'Experiencia Creada'
+                    );
+                    this.router.navigate(['/']);
+                },
+                error: (err) => {
+                    this.toastr.error('Error al crear la Experiencia', 'Error');
+                    console.error(err);
+                },
+            });
+        }
+    }
+
+    isUpdate() {
+        if (this.id !== null) {
+            this.title = 'Actualizar Experiencia';
+            this.portfolioService.getExpertiseById(this.id).subscribe({
+                next: (response) => {
+                    this.expertiseForm.patchValue({
+                        position: response.position,
+                        company: response.company,
+                        inicio: response.inicio,
+                        fin: response.fin,
+                        city: response.city,
+                        imageCompany: response.imageCompany,
+                        description: response.description,
+                    });
+                },
+                error: (err) => {
+                    this.toastr.error(
+                        'Error al obtener la Experiencia',
+                        'Error'
+                    );
+                    console.error(err);
+                },
+            });
+        }
     }
 }

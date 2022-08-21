@@ -7,10 +7,19 @@
 
     <article class="about__container">
         <h2 class="about-title">
-            Hola, soy {{ person.name }}, encantado de conocerte! <span>👋</span>
+            Hola, soy {{ person.name }}, encantado de conocerte!
+            <span>👋</span>
         </h2>
-        <p class="about-paragraph">
-            {{ person.aboutDescription }}
-        </p>
+        <article class="card-flex">
+            <p class="about-paragraph">
+                {{ person.aboutDescription }}
+            </p>
+            <div class="update-delete">
+                <i
+                    class="fa-solid fa-pen-to-square"
+                    [routerLink]="['/editar-perfil', person.id]"
+                ></i>
+            </div>
+        </article>
     </article>
 </section>

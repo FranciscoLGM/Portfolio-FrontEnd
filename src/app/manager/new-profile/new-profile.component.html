@@ -1,0 +1,169 @@
+<app-navbar></app-navbar>
+<section>
+    <div class="container">
+        <article>
+            <h2 class="title-form">{{ title }}</h2>
+        </article>
+
+        <article>
+            <form [formGroup]="profileForm" (ngSubmit)="postProfileData()">
+                <fieldset class="form-group">
+                    <label for="name">Nombre</label>
+                    <input
+                        type="text"
+                        name="name"
+                        id="name"
+                        required
+                        placeholder="Ingresa tú nombre"
+                        formControlName="name"
+                    />
+                    <label
+                        class="alert"
+                        *ngIf="
+                            profileForm.get('name')?.hasError('required') &&
+                            profileForm.get('name')?.touched
+                        "
+                    >
+                        Debes ingresar un nombre
+                    </label>
+                </fieldset>
+                <fieldset>
+                    <label for="lastname">Apellido</label>
+                    <input
+                        type="text"
+                        name="lastname"
+                        id="lastname"
+                        required
+                        placeholder="Ingresa el apellido"
+                        formControlName="lastname"
+                    />
+                    <label
+                        class="alert"
+                        *ngIf="
+                            profileForm.get('lastname')?.hasError('required') &&
+                            profileForm.get('lastname')?.touched
+                        "
+                    >
+                        Debes ingresar un apellido
+                    </label>
+                </fieldset>
+                <fieldset>
+                    <label for="profession">Profesión</label>
+                    <input
+                        type="text"
+                        name="profession"
+                        id="profession"
+                        required
+                        placeholder="Ingresa la profesión"
+                        formControlName="profession"
+                    />
+                    <label
+                        class="alert"
+                        *ngIf="
+                            profileForm
+                                .get('profession')
+                                ?.hasError('required') &&
+                            profileForm.get('profession')?.touched
+                        "
+                    >
+                        Debes ingresar una profesión
+                    </label>
+                </fieldset>
+                <fieldset>
+                    <label for="occupation">Ocupación</label>
+                    <input
+                        type="text"
+                        name="occupation"
+                        id="occupation"
+                        required
+                        placeholder="Ingresa la ocupación"
+                        formControlName="occupation"
+                    />
+                    <label
+                        class="alert"
+                        *ngIf="
+                            profileForm
+                                .get('occupation')
+                                ?.hasError('required') &&
+                            profileForm.get('occupation')?.touched
+                        "
+                    >
+                        Debes ingresar una ocupación
+                    </label>
+                </fieldset>
+                <fieldset>
+                    <label for="heroDescription">Descripción del Header</label>
+                    <textarea
+                        name="heroDescription"
+                        id="heroDescription"
+                        required
+                        placeholder="Ingresa una descripción para el header"
+                        formControlName="heroDescription"
+                    ></textarea>
+                    <label
+                        class="alert"
+                        *ngIf="
+                            profileForm
+                                .get('heroDescription')
+                                ?.hasError('required') &&
+                            profileForm.get('heroDescription')?.touched
+                        "
+                    >
+                        Debes ingresar una descripción
+                    </label>
+                </fieldset>
+                <fieldset>
+                    <label for="aboutDescription"
+                        >Descripción del acerca de</label
+                    >
+                    <textarea
+                        name="aboutDescription"
+                        id="aboutDescription"
+                        required
+                        placeholder="Ingresa una descripción para el acerca de"
+                        formControlName="aboutDescription"
+                    ></textarea>
+                    <label
+                        class="alert"
+                        *ngIf="
+                            profileForm
+                                .get('aboutDescription')
+                                ?.hasError('required') &&
+                            profileForm.get('aboutDescription')?.touched
+                        "
+                    >
+                        Debes ingresar una descripción
+                    </label>
+                </fieldset>
+                <fieldset>
+                    <label for="imageProfile">Imágen de perfil</label>
+                    <input
+                        type="text"
+                        name="imageProfile"
+                        id="imageProfile"
+                        required
+                        placeholder="Ingresa la ruta de la imágen de perfil"
+                        formControlName="imageProfile"
+                    />
+                    <label
+                        class="alert"
+                        *ngIf="
+                            profileForm
+                                .get('imageProfile')
+                                ?.hasError('required') &&
+                            profileForm.get('imageProfile')?.touched
+                        "
+                    >
+                        Debes ingresar una ruta de la imágen de perfil
+                    </label>
+                </fieldset>
+                <fieldset>
+                    <button type="submit" [disabled]="!profileForm.valid">
+                        Actualizar
+                    </button>
+                </fieldset>
+            </form>
+        </article>
+    </div>
+</section>
+<app-footer></app-footer>

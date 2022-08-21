@@ -39,25 +39,25 @@ export class SkillsComponent implements OnInit {
             confirmButtonText: 'Si, Eliminar!',
             cancelButtonText: 'Cancelar',
             position: 'top',
-        }).then((result) => {
-            if (result.value) {
-                this.portfolioService.deleteSkill(id).subscribe({
-                    next: (response) => {
-                        this.toastr.success(
-                            'La Habilidad fue eliminada con éxito',
-                            'Habilidad Eliminada'
-                        );
-                        this.getSkillData();
-                    },
-                    error: (err) => {
-                        this.toastr.error(
-                            'Error al eliminar la Habilidad',
-                            'Error'
-                        );
-                        console.error(err);
-                    },
-                });
-            }
-        });
+        })
+            .then((result) => {
+                if (result.value) {
+                    this.portfolioService.deleteSkill(id).subscribe({
+                        next: (response) => {
+                            this.toastr.success(
+                                'La Habilidad fue eliminada con éxito',
+                                'Habilidad Eliminada'
+                            );
+                            this.getSkillData();
+                        },
+                    });
+                }
+            })
+            .catch(() => {
+                this.toastr.error('Error al eliminar la Habilidad', 'Error');
+            })
+            .finally(() => {
+                this.getSkillData();
+            });
     }
 }

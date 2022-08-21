@@ -80,10 +80,14 @@ export class NewSkillComponent implements OnInit {
             this.title = 'Actualizar Habilidad';
             this.portfolioService.getSkillById(this.id).subscribe({
                 next: (response) => {
-                    this.skillForm.setValue({
+                    this.skillForm.patchValue({
                         skill: response.skill,
                         rate: response.rate,
                     });
+                },
+                error: (err) => {
+                    this.toastr.error('Error al obtener la Habilidad', 'Error');
+                    console.error(err);
                 },
             });
         }
