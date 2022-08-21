@@ -4,7 +4,19 @@
         <i routerLink="/nueva-habilidad" class="fa-solid fa-plus"></i>
     </article>
     <article *ngFor="let skill of skills">
-        <p class="skill-title">{{ skill.skill }}</p>
+        <article class="card-flex">
+            <p class="skill-title">{{ skill.skill }}</p>
+            <div class="update-delete">
+                <i
+                    class="fa-solid fa-pen-to-square"
+                    [routerLink]="['/editar-habilidad', skill.id]"
+                ></i>
+                <i
+                    (click)="deleteSkillData(skill.id)"
+                    class="fa-solid fa-trash-can"
+                ></i>
+            </div>
+        </article>
         <div class="skill-light-grey">
             <div
                 class="skill-container skill-center skill-padding-small skill-dark-grey"

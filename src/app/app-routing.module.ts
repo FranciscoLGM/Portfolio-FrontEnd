@@ -16,6 +16,7 @@ const routes: Routes = [
     { path: 'nueva-certificacion', component: NewCertificationComponent },
     { path: 'nueva-habilidad', component: NewSkillComponent },
     { path: 'nuevo-proyecto', component: NewProjectComponent },
+    { path: 'editar-habilidad/:id', component: NewSkillComponent },
     { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
 

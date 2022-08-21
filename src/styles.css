@@ -113,13 +113,6 @@ a {
     text-align: center;
 }
 
-.fa-plus {
-    color: var(--bs-text-color-dark);
-    font-size: 3rem;
-    font-weight: 300;
-    cursor: pointer;
-}
-
 .card-container {
     display: flex;
 }
@@ -148,4 +141,57 @@ a {
 .card-text {
     font-size: 1.8rem;
     padding: 1rem 0;
+}
+
+/* Button */
+
+.fa-plus {
+    color: var(--bs-text-color-dark);
+    font-size: 3rem;
+    font-weight: 300;
+    cursor: pointer;
+    opacity: 0.25;
+}
+
+.fa-plus:hover {
+    opacity: 1;
+}
+
+.update-delete {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.fa-pen-to-square {
+    color: var(--bs-text-color-dark);
+    font-size: 2rem;
+    padding: 0.5rem 0;
+    font-weight: 300;
+    cursor: pointer;
+    opacity: 0.25;
+}
+
+.fa-trash-can {
+    color: var(--bs-text-color-dark);
+    font-size: 2rem;
+    padding: 0.5rem 0;
+    font-weight: 300;
+    cursor: pointer;
+    opacity: 0.25;
+}
+
+.fa-pen-to-square:hover {
+    opacity: 1;
+    color: #198754;
+}
+
+.fa-trash-can:hover {
+    opacity: 1;
+    color: #dc3545;
+}
+
+.swal2-popup {
+    font-size: 1.6rem !important;
 }
