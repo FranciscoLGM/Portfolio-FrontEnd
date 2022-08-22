@@ -56,6 +56,14 @@ figure > a {
     width: 100%;
 }
 
+.project-flex {
+    display: flex;
+    justify-content: flex-end !important;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 1rem;
+}
+
 .fa-pen-to-square {
     color: #abbaab77;
 }

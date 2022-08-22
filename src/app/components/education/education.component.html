@@ -6,6 +6,18 @@
         </article>
 
         <section class="card" *ngFor="let education of educations">
+            <article class="card-flex education-flex">
+                <div class="update-delete">
+                    <i
+                        class="fa-solid fa-pen-to-square"
+                        [routerLink]="['/editar-educacion', education.id]"
+                    ></i>
+                    <i
+                        (click)="deleteEducationData(education.id)"
+                        class="fa-solid fa-trash-can"
+                    ></i>
+                </div>
+            </article>
             <article class="card-container">
                 <section class="card-logo">
                     <picture>
@@ -30,18 +42,6 @@
                         {{ education.description }}
                     </p>
                 </section>
-                <article>
-                    <div class="update-delete">
-                        <i
-                            class="fa-solid fa-pen-to-square"
-                            [routerLink]="['/editar-educacion', education.id]"
-                        ></i>
-                        <i
-                            (click)="deleteEducationData(education.id)"
-                            class="fa-solid fa-trash-can"
-                        ></i>
-                    </div>
-                </article>
             </article>
         </section>
     </article>
@@ -53,6 +53,21 @@
         </article>
 
         <section class="card" *ngFor="let certification of certifications">
+            <article class="card-flex education-flex">
+                <div class="update-delete">
+                    <i
+                        class="fa-solid fa-pen-to-square"
+                        [routerLink]="[
+                            '/editar-certificacion',
+                            certification.id
+                        ]"
+                    ></i>
+                    <i
+                        (click)="deleteCertificationData(certification.id)"
+                        class="fa-solid fa-trash-can"
+                    ></i>
+                </div>
+            </article>
             <article class="card-container">
                 <section class="card-logo">
                     <picture>
@@ -77,21 +92,6 @@
                         {{ certification.description }}
                     </p>
                 </section>
-                <article>
-                    <div class="update-delete">
-                        <i
-                            class="fa-solid fa-pen-to-square"
-                            [routerLink]="[
-                                '/editar-certificacion',
-                                certification.id
-                            ]"
-                        ></i>
-                        <i
-                            (click)="deleteCertificationData(certification.id)"
-                            class="fa-solid fa-trash-can"
-                        ></i>
-                    </div>
-                </article>
             </article>
         </section>
     </article>

@@ -109,7 +109,7 @@
                             profileForm.get('heroDescription')?.touched
                         "
                     >
-                        Debes ingresar una descripción
+                        Debes ingresar una descripción para la sección header
                     </label>
                 </fieldset>
                 <fieldset>
@@ -132,7 +132,7 @@
                             profileForm.get('aboutDescription')?.touched
                         "
                     >
-                        Debes ingresar una descripción
+                        Debes ingresar una descripción para la sección acerca de
                     </label>
                 </fieldset>
                 <fieldset>
@@ -157,10 +157,11 @@
                         Debes ingresar una ruta de la imágen de perfil
                     </label>
                 </fieldset>
-                <fieldset>
+                <fieldset class="btn-flex">
                     <button type="submit" [disabled]="!profileForm.valid">
                         Actualizar
                     </button>
+                    <button class="cancelar" routerLink="/">Cancelar</button>
                 </fieldset>
             </form>
         </article>

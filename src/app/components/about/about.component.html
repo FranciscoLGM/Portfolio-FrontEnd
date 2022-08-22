@@ -6,20 +6,21 @@
     </article>
 
     <article class="about__container">
-        <h2 class="about-title">
-            Hola, soy {{ person.name }}, encantado de conocerte!
-            <span>👋</span>
-        </h2>
-        <article class="card-flex">
-            <p class="about-paragraph">
-                {{ person.aboutDescription }}
-            </p>
+        <div class="card-flex">
+            <div></div>
             <div class="update-delete">
                 <i
                     class="fa-solid fa-pen-to-square"
                     [routerLink]="['/editar-perfil', person.id]"
                 ></i>
             </div>
-        </article>
+        </div>
+
+        <h2 class="about-title">
+            Hola, soy {{ person.name }}, encantado de conocerte! <span>👋</span>
+        </h2>
+        <p class="about-paragraph">
+            {{ person.aboutDescription }}
+        </p>
     </article>
 </section>

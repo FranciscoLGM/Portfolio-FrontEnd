@@ -14,7 +14,7 @@
                         name="skill"
                         id="skill"
                         required
-                        placeholder="Ingresa tú habilidad"
+                        placeholder="Ingresa una habilidad"
                         formControlName="skill"
                     />
                     <label
@@ -47,13 +47,14 @@
                             skillForm.get('rate')?.touched
                         "
                     >
-                        Debes ingresar un porcentaje
+                        Debes ingresar un porcentaje de conocimiento
                     </label>
                 </fieldset>
-                <fieldset>
+                <fieldset class="btn-flex">
                     <button type="submit" [disabled]="!skillForm.valid">
-                        Crear
+                        Aceptar
                     </button>
+                    <button class="cancelar" routerLink="/">Cancelar</button>
                 </fieldset>
             </form>
         </article>

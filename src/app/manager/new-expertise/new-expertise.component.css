@@ -88,10 +88,16 @@ textarea {
     resize: vertical;
 }
 
+.btn-flex {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
 button {
     border: none;
     display: block;
-    width: 100%;
+    width: 30%;
     padding: 1rem;
     background-color: #198754;
     color: inherit;
@@ -99,11 +105,15 @@ button {
     cursor: pointer;
 }
 
+.cancelar {
+    background-color: #d33;
+}
+
 /* Validation alert */
 
 .alert {
     font-size: 1.5rem;
-    color: crimson;
+    color: #f00;
 }
 
 /* media queries */

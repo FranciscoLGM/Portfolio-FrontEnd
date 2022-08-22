@@ -51,6 +51,7 @@
                             certificationForm.get('university')?.touched
                         "
                     >
+                        Debes ingresar un nombre de la Universidad
                     </label>
                 </fieldset>
                 <fieldset>
@@ -164,10 +165,11 @@
                         Debes ingresar una descripción
                     </label>
                 </fieldset>
-                <fieldset>
+                <fieldset class="btn-flex">
                     <button type="submit" [disabled]="!certificationForm.valid">
-                        Crear
+                        Aceptar
                     </button>
+                    <button class="cancelar" routerLink="/">Cancelar</button>
                 </fieldset>
             </form>
         </article>

@@ -77,15 +77,25 @@ input:focus {
     box-shadow: 0 0 0 0.35rem rgba(0, 123, 255, 0.25);
 }
 
+.btn-flex {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
 button {
     border: none;
     display: block;
-    width: 100%;
+    width: 40%;
     padding: 1rem;
     background-color: #198754;
     color: inherit;
     border-radius: 20px;
     cursor: pointer;
+}
+
+.cancelar {
+    background-color: #d33;
 }
 
 /* media queries */

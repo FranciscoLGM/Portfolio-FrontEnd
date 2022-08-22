@@ -1,0 +1,6 @@
+.expertise-flex {
+    display: flex;
+    justify-content: flex-end !important;
+    align-items: center;
+    width: 100%;
+}
