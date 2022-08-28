@@ -18,12 +18,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { NewSkillComponent } from './manager/new-skill/new-skill.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NewExpertiseComponent } from './manager/new-expertise/new-expertise.component';
 import { NewEducationComponent } from './manager/new-education/new-education.component';
 import { NewCertificationComponent } from './manager/new-certification/new-certification.component';
 import { NewProjectComponent } from './manager/new-project/new-project.component';
 import { NewProfileComponent } from './manager/new-profile/new-profile.component';
+import { interceptorProvider } from './interceptors/portfolio-interceptor.service';
 
 @NgModule({
     declarations: [
@@ -53,8 +54,9 @@ import { NewProfileComponent } from './manager/new-profile/new-profile.component
         BrowserAnimationsModule, // required animations module
         ToastrModule.forRoot(), // ToastrModule added
         ReactiveFormsModule,
+        FormsModule,
     ],
-    providers: [],
+    providers: [interceptorProvider],
     bootstrap: [AppComponent],
 })
 export class AppModule {}

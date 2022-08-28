@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { Expertise } from 'src/app/models/expertise';
 import { portfolioService } from 'src/app/services/portfolio.service';
+import { TokenService } from 'src/app/services/token.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -12,14 +13,22 @@ import Swal from 'sweetalert2';
 export class ExpertiseComponent implements OnInit {
     title = 'Experiencia';
     expertises: Expertise[] = [];
+    isLogged = false;
 
     constructor(
         private portfolioService: portfolioService,
-        private toastr: ToastrService
+        private toastr: ToastrService,
+        private tokenService: TokenService
     ) {}
 
     ngOnInit(): void {
         this.getExpertiseData();
+
+        if (this.tokenService.getToken()) {
+            this.isLogged = true;
+        } else {
+            this.isLogged = false;
+        }
     }
 
     private getExpertiseData() {

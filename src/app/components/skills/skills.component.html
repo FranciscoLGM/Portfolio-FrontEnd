@@ -1,12 +1,16 @@
 <section class="container" id="skills">
     <article class="card-flex">
         <h2 class="card-title">{{ title }}</h2>
-        <i routerLink="/nueva-habilidad" class="fa-solid fa-plus"></i>
+        <i
+            routerLink="/nueva-habilidad"
+            class="fa-solid fa-plus"
+            *ngIf="isLogged"
+        ></i>
     </article>
     <article *ngFor="let skill of skills">
         <article class="card-flex">
             <p class="skill-title">{{ skill.skill }}</p>
-            <div class="update-delete">
+            <div class="update-delete" *ngIf="isLogged">
                 <i
                     class="fa-solid fa-pen-to-square"
                     [routerLink]="['/editar-habilidad', skill.id]"

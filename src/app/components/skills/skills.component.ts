@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { Skill } from 'src/app/models/skill';
 import { portfolioService } from 'src/app/services/portfolio.service';
+import { TokenService } from 'src/app/services/token.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -12,14 +13,22 @@ import Swal from 'sweetalert2';
 export class SkillsComponent implements OnInit {
     title = 'Mis Habilidades';
     skills: Skill[] = [];
+    isLogged = false;
 
     constructor(
         private portfolioService: portfolioService,
-        private toastr: ToastrService
+        private toastr: ToastrService,
+        private tokenService: TokenService
     ) {}
 
     ngOnInit(): void {
         this.getSkillData();
+
+        if (this.tokenService.getToken()) {
+            this.isLogged = true;
+        } else {
+            this.isLogged = false;
+        }
     }
     private getSkillData() {
         this.portfolioService.getSkill().subscribe((data) => {

@@ -116,6 +116,10 @@ button {
     color: #f00;
 }
 
+button:disabled {
+    opacity: 0.6;
+}
+
 /* media queries */
 
 @media (max-width: 450px) {

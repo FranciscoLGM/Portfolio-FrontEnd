@@ -46,7 +46,7 @@ export class NewProjectComponent implements OnInit {
         if (this.id !== null) {
             // Actualizar skill
             this.portfolioService.putProject(project).subscribe({
-                next: (response) => {
+                next: (data) => {
                     this.toastr.info(
                         'Proyecto actualizado con éxito',
                         'Proyecto Actualizado'
@@ -57,7 +57,7 @@ export class NewProjectComponent implements OnInit {
         } else {
             console.log(this.projectForm);
             this.portfolioService.postProject(project).subscribe({
-                next: (response) => {
+                next: (data) => {
                     this.toastr.success(
                         'El Proyecto fue creado con éxito',
                         'Proyecto Creado'
@@ -76,12 +76,12 @@ export class NewProjectComponent implements OnInit {
         if (this.id !== null) {
             this.title = 'Actualizar Proyecto';
             this.portfolioService.getProjectById(this.id).subscribe({
-                next: (response) => {
+                next: (data) => {
                     this.projectForm.patchValue({
-                        title: response.title,
-                        description: response.description,
-                        imageProject: response.imageProject,
-                        urlProject: response.urlProject,
+                        title: data.title,
+                        description: data.description,
+                        imageProject: data.imageProject,
+                        urlProject: data.urlProject,
                     });
                 },
                 error: (err) => {

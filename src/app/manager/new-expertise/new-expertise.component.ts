@@ -53,7 +53,7 @@ export class NewExpertiseComponent implements OnInit {
         if (this.id !== null) {
             // Actualizar expertise
             this.portfolioService.putExpertise(expertise).subscribe({
-                next: (response) => {
+                next: (data) => {
                     this.toastr.info(
                         'Experiencia actualizada con éxito',
                         'Experiencia Actualizada'
@@ -64,7 +64,7 @@ export class NewExpertiseComponent implements OnInit {
         } else {
             console.log(this.expertiseForm);
             this.portfolioService.postExpertise(expertise).subscribe({
-                next: (response) => {
+                next: (data) => {
                     this.toastr.success(
                         'La Experiencia fue creada con éxito',
                         'Experiencia Creada'
@@ -83,15 +83,15 @@ export class NewExpertiseComponent implements OnInit {
         if (this.id !== null) {
             this.title = 'Actualizar Experiencia';
             this.portfolioService.getExpertiseById(this.id).subscribe({
-                next: (response) => {
+                next: (data) => {
                     this.expertiseForm.patchValue({
-                        position: response.position,
-                        company: response.company,
-                        inicio: response.inicio,
-                        fin: response.fin,
-                        city: response.city,
-                        imageCompany: response.imageCompany,
-                        description: response.description,
+                        position: data.position,
+                        company: data.company,
+                        inicio: data.inicio,
+                        fin: data.fin,
+                        city: data.city,
+                        imageCompany: data.imageCompany,
+                        description: data.description,
                     });
                 },
                 error: (err) => {

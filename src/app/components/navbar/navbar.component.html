@@ -27,10 +27,16 @@
         </div>
         <section class="nav" id="nav">
             <ul>
-                <li>
+                <li *ngIf="!isLogged">
                     <a routerLink="/login"
                         >Acceder
                         <i class="fa-solid fa-arrow-right-to-bracket"></i
+                    ></a>
+                </li>
+                <li *ngIf="isLogged" (click)="signout()">
+                    <a routerLink="/"
+                        >Salir
+                        <i class="fa-solid fa-arrow-right-from-bracket"></i
                     ></a>
                 </li>
                 <li>

@@ -2,12 +2,16 @@
     <article>
         <article class="card-flex">
             <h2 class="card-title">{{ title }}</h2>
-            <i routerLink="/nueva-educacion" class="fa-solid fa-plus"></i>
+            <i
+                routerLink="/nueva-educacion"
+                class="fa-solid fa-plus"
+                *ngIf="isLogged"
+            ></i>
         </article>
 
         <section class="card" *ngFor="let education of educations">
             <article class="card-flex education-flex">
-                <div class="update-delete">
+                <div class="update-delete" *ngIf="isLogged">
                     <i
                         class="fa-solid fa-pen-to-square"
                         [routerLink]="['/editar-educacion', education.id]"
@@ -49,12 +53,16 @@
     <article>
         <article class="card-flex">
             <h2 class="card-title">{{ title2 }}</h2>
-            <i routerLink="/nueva-certificacion" class="fa-solid fa-plus"></i>
+            <i
+                routerLink="/nueva-certificacion"
+                class="fa-solid fa-plus"
+                *ngIf="isLogged"
+            ></i>
         </article>
 
         <section class="card" *ngFor="let certification of certifications">
             <article class="card-flex education-flex">
-                <div class="update-delete">
+                <div class="update-delete" *ngIf="isLogged">
                     <i
                         class="fa-solid fa-pen-to-square"
                         [routerLink]="[

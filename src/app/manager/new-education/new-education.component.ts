@@ -52,7 +52,7 @@ export class NewEducationComponent implements OnInit {
         if (this.id !== null) {
             // Actualizar skill
             this.portfolioService.putEducation(education).subscribe({
-                next: (response) => {
+                next: (data) => {
                     this.toastr.info(
                         'Educación actualizada con éxito',
                         'Educación Actualizada'
@@ -63,7 +63,7 @@ export class NewEducationComponent implements OnInit {
         } else {
             console.log(this.educationForm);
             this.portfolioService.postEducation(education).subscribe({
-                next: (response) => {
+                next: (data) => {
                     this.toastr.success(
                         'La Educación fue creada con éxito',
                         'Educación Creada'
@@ -82,15 +82,15 @@ export class NewEducationComponent implements OnInit {
         if (this.id !== null) {
             this.title = 'Actualizar Educación';
             this.portfolioService.getEducationById(this.id).subscribe({
-                next: (response) => {
+                next: (data) => {
                     this.educationForm.patchValue({
-                        degree: response.degree,
-                        university: response.university,
-                        inicio: response.inicio,
-                        fin: response.fin,
-                        city: response.city,
-                        imageUniversity: response.imageUniversity,
-                        description: response.description,
+                        degree: data.degree,
+                        university: data.university,
+                        inicio: data.inicio,
+                        fin: data.fin,
+                        city: data.city,
+                        imageUniversity: data.imageUniversity,
+                        description: data.description,
                     });
                 },
                 error: (err) => {

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { Project } from 'src/app/models/project';
 import { portfolioService } from 'src/app/services/portfolio.service';
+import { TokenService } from 'src/app/services/token.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -12,14 +13,22 @@ import Swal from 'sweetalert2';
 export class ProjectsComponent implements OnInit {
     title = 'Mis Proyectos';
     projects: Project[] = [];
+    isLogged = false;
 
     constructor(
         private portfolioService: portfolioService,
-        private toastr: ToastrService
+        private toastr: ToastrService,
+        private tokenService: TokenService
     ) {}
 
     ngOnInit(): void {
         this.getProjectData();
+
+        if (this.tokenService.getToken()) {
+            this.isLogged = true;
+        } else {
+            this.isLogged = false;
+        }
     }
 
     private getProjectData() {

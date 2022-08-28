@@ -3,6 +3,7 @@ import { ToastrService } from 'ngx-toastr';
 import { Certification } from 'src/app/models/certification';
 import { Education } from 'src/app/models/education';
 import { portfolioService } from 'src/app/services/portfolio.service';
+import { TokenService } from 'src/app/services/token.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -15,15 +16,23 @@ export class EducationComponent implements OnInit {
     title2 = 'Licencias y Certificaciones';
     educations: Education[] = [];
     certifications: Certification[] = [];
+    isLogged = false;
 
     constructor(
         private portfolioService: portfolioService,
-        private toastr: ToastrService
+        private toastr: ToastrService,
+        private tokenService: TokenService
     ) {}
 
     ngOnInit(): void {
         this.getEducationData();
         this.getCertificationData();
+
+        if (this.tokenService.getToken()) {
+            this.isLogged = true;
+        } else {
+            this.isLogged = false;
+        }
     }
 
     private getEducationData() {

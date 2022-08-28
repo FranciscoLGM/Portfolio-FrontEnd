@@ -8,21 +8,72 @@ import { NewExpertiseComponent } from './manager/new-expertise/new-expertise.com
 import { NewProfileComponent } from './manager/new-profile/new-profile.component';
 import { NewProjectComponent } from './manager/new-project/new-project.component';
 import { NewSkillComponent } from './manager/new-skill/new-skill.component';
+import { PortfolioGuardService as guard } from './guards/portfolio-guard.service';
 
 const routes: Routes = [
     { path: '', component: HomeComponent },
     { path: 'login', component: LoginComponent },
-    { path: 'nueva-experiencia', component: NewExpertiseComponent },
-    { path: 'nueva-educacion', component: NewEducationComponent },
-    { path: 'nueva-certificacion', component: NewCertificationComponent },
-    { path: 'nueva-habilidad', component: NewSkillComponent },
-    { path: 'nuevo-proyecto', component: NewProjectComponent },
-    { path: 'editar-perfil/:id', component: NewProfileComponent },
-    { path: 'editar-experiencia/:id', component: NewExpertiseComponent },
+    {
+        path: 'nueva-experiencia',
+        component: NewExpertiseComponent,
+        canActivate: [guard],
+        data: { expectedRole: ['admin'] },
+    },
+    {
+        path: 'nueva-educacion',
+        component: NewEducationComponent,
+        canActivate: [guard],
+        data: { expectedRole: ['admin'] },
+    },
+    {
+        path: 'nueva-certificacion',
+        component: NewCertificationComponent,
+        canActivate: [guard],
+        data: { expectedRole: ['admin'] },
+    },
+    {
+        path: 'nueva-habilidad',
+        component: NewSkillComponent,
+        canActivate: [guard],
+        data: { expectedRole: ['admin'] },
+    },
+    {
+        path: 'nuevo-proyecto',
+        component: NewProjectComponent,
+        canActivate: [guard],
+        data: { expectedRole: ['admin'] },
+    },
+    {
+        path: 'editar-perfil/:id',
+        component: NewProfileComponent,
+        canActivate: [guard],
+        data: { expectedRole: ['admin'] },
+    },
+    {
+        path: 'editar-experiencia/:id',
+        component: NewExpertiseComponent,
+        canActivate: [guard],
+        data: { expectedRole: ['admin', 'user'] },
+    },
     { path: 'editar-educacion/:id', component: NewEducationComponent },
-    { path: 'editar-certificacion/:id', component: NewCertificationComponent },
-    { path: 'editar-habilidad/:id', component: NewSkillComponent },
-    { path: 'editar-proyecto/:id', component: NewProjectComponent },
+    {
+        path: 'editar-certificacion/:id',
+        component: NewCertificationComponent,
+        canActivate: [guard],
+        data: { expectedRole: ['admin', 'user'] },
+    },
+    {
+        path: 'editar-habilidad/:id',
+        component: NewSkillComponent,
+        canActivate: [guard],
+        data: { expectedRole: ['admin', 'user'] },
+    },
+    {
+        path: 'editar-proyecto/:id',
+        component: NewProjectComponent,
+        canActivate: [guard],
+        data: { expectedRole: ['admin', 'user'] },
+    },
     { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
 

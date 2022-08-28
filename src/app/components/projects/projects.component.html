@@ -2,13 +2,17 @@
     <section class="container">
         <article class="card-flex">
             <h2 class="card-title">{{ title }}</h2>
-            <i routerLink="/nuevo-proyecto" class="fa-solid fa-plus"></i>
+            <i
+                routerLink="/nuevo-proyecto"
+                class="fa-solid fa-plus"
+                *ngIf="isLogged"
+            ></i>
         </article>
 
         <section class="projects-grid">
             <article class="project-item" *ngFor="let project of projects">
                 <article class="card-flex project-flex">
-                    <div class="update-delete">
+                    <div class="update-delete" *ngIf="isLogged">
                         <i
                             class="fa-solid fa-pen-to-square"
                             [routerLink]="['/editar-proyecto', project.id]"

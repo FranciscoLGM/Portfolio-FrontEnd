@@ -53,7 +53,7 @@ export class NewCertificationComponent implements OnInit {
         if (this.id !== null) {
             // Actualizar skill
             this.portfolioService.putCertification(certification).subscribe({
-                next: (response) => {
+                next: (data) => {
                     this.toastr.info(
                         'Certificación actualizada con éxito',
                         'Certificación Actualizada'
@@ -70,7 +70,7 @@ export class NewCertificationComponent implements OnInit {
         } else {
             console.log(this.certificationForm);
             this.portfolioService.postCertification(certification).subscribe({
-                next: (response) => {
+                next: (data) => {
                     this.toastr.success(
                         'La Certificación fue creada con éxito',
                         'Certificación Creada'
@@ -92,15 +92,15 @@ export class NewCertificationComponent implements OnInit {
         if (this.id !== null) {
             this.title = 'Actualizar Certificación';
             this.portfolioService.getCertificationById(this.id).subscribe({
-                next: (response) => {
+                next: (data) => {
                     this.certificationForm.patchValue({
-                        degree: response.degree,
-                        university: response.university,
-                        inicio: response.inicio,
-                        fin: response.fin,
-                        city: response.city,
-                        imageUniversity: response.imageUniversity,
-                        description: response.description,
+                        degree: data.degree,
+                        university: data.university,
+                        inicio: data.inicio,
+                        fin: data.fin,
+                        city: data.city,
+                        imageUniversity: data.imageUniversity,
+                        description: data.description,
                     });
                 },
                 error: (err) => {

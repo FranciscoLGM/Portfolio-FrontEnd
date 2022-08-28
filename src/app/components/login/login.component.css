@@ -13,6 +13,12 @@ section {
     ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
+.signin {
+    font-size: 3rem;
+    font-weight: 700;
+    text-align: center;
+}
+
 .title-form {
     font-size: var(--bs-font-size-h2);
     color: var(--bs-text-color-dark);
@@ -96,6 +102,17 @@ button {
 
 .cancelar {
     background-color: #d33;
+}
+
+button:disabled {
+    opacity: 0.6;
+}
+
+/* Validation alert */
+
+.alert {
+    font-size: 1.5rem;
+    color: #f00;
 }
 
 /* media queries */

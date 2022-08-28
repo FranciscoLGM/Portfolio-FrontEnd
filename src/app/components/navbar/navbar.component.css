@@ -111,8 +111,10 @@
     font-weight: 300;
 }
 
-.fa-arrow-right-to-bracket {
+.fa-arrow-right-to-bracket,
+.fa-arrow-right-from-bracket {
     font-size: 2rem;
+    padding-left: 0.3rem;
 }
 
 .nav li a:hover {

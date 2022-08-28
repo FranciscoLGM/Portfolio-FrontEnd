@@ -8,7 +8,7 @@
     <article class="about__container">
         <div class="card-flex">
             <div></div>
-            <div class="update-delete">
+            <div class="update-delete" *ngIf="isLogged">
                 <i
                     class="fa-solid fa-pen-to-square"
                     [routerLink]="['/editar-perfil', person.id]"

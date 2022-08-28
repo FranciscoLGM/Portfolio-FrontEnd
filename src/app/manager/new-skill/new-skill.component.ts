@@ -43,7 +43,7 @@ export class NewSkillComponent implements OnInit {
         if (this.id !== null) {
             // Actualizar skill
             this.portfolioService.putSkill(skill).subscribe({
-                next: (response) => {
+                next: (data) => {
                     this.toastr.info(
                         'Habilidad actualizada con éxito',
                         'Habilidad Actualizada'
@@ -60,7 +60,7 @@ export class NewSkillComponent implements OnInit {
         } else {
             console.log(this.skillForm);
             this.portfolioService.postSkill(skill).subscribe({
-                next: (response) => {
+                next: (data) => {
                     this.toastr.success(
                         'La Habilidad fue creada con éxito',
                         'Habilidad Creada'

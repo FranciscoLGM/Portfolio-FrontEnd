@@ -1,13 +1,17 @@
 <section class="container" id="expertise">
     <article class="card-flex">
         <h2 class="card-title">{{ title }}</h2>
-        <i routerLink="/nueva-experiencia" class="fa-solid fa-plus"></i>
+        <i
+            routerLink="/nueva-experiencia"
+            class="fa-solid fa-plus"
+            *ngIf="isLogged"
+        ></i>
     </article>
 
     <section class="card" *ngFor="let expertise of expertises">
         <article class="card-flex expertise-flex">
             <div></div>
-            <div class="update-delete">
+            <div class="update-delete" *ngIf="isLogged">
                 <i
                     class="fa-solid fa-pen-to-square"
                     [routerLink]="['/editar-experiencia', expertise.id]"

@@ -53,7 +53,7 @@ export class NewProfileComponent implements OnInit {
         if (this.id !== null) {
             // Actualizar expertise
             this.portfolioService.putPerson(profile).subscribe({
-                next: (response) => {
+                next: (data) => {
                     this.toastr.info(
                         'Perfil actualizado con éxito',
                         'Perfil Actualizado'
@@ -64,7 +64,7 @@ export class NewProfileComponent implements OnInit {
         } else {
             // Crear expertise
             this.portfolioService.postPerson(profile).subscribe({
-                next: (response) => {
+                next: (data) => {
                     this.toastr.info(
                         'Perfil creado con éxito',
                         'Perfil Creado'
@@ -82,15 +82,15 @@ export class NewProfileComponent implements OnInit {
     isUpdate() {
         if (this.id !== null) {
             this.portfolioService.getPersonById(this.id).subscribe({
-                next: (response) => {
+                next: (data) => {
                     this.profileForm.patchValue({
-                        name: response.name,
-                        lastname: response.lastname,
-                        profession: response.profession,
-                        occupation: response.occupation,
-                        heroDescription: response.heroDescription,
-                        aboutDescription: response.aboutDescription,
-                        imageProfile: response.imageProfile,
+                        name: data.name,
+                        lastname: data.lastname,
+                        profession: data.profession,
+                        occupation: data.occupation,
+                        heroDescription: data.heroDescription,
+                        aboutDescription: data.aboutDescription,
+                        imageProfile: data.imageProfile,
                     });
                 },
                 error: (err) => {
