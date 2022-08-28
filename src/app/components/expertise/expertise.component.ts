@@ -32,9 +32,10 @@ export class ExpertiseComponent implements OnInit {
     }
 
     private getExpertiseData() {
-        this.portfolioService.getExpertise().subscribe((data) => {
-            // console.log(data);
-            this.expertises = data;
+        this.portfolioService.getExpertise().subscribe({
+            next: (data) => {
+                this.expertises = data;
+            },
         });
     }
 
@@ -53,7 +54,7 @@ export class ExpertiseComponent implements OnInit {
             .then((result) => {
                 if (result.value) {
                     this.portfolioService.deleteExpertise(id).subscribe({
-                        next: (response) => {
+                        next: (data) => {
                             this.toastr.success(
                                 'Experiencia eliminada con éxito',
                                 'Experiencia Eliminada'

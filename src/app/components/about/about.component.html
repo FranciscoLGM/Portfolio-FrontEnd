@@ -1,7 +1,7 @@
 <section class="about container" id="about">
     <article class="about-avatar">
         <picture>
-            <img [src]="person.imageProfile" alt="Imagen de Perfil" />
+            <img [src]="imageProfile" alt="Imagen de Perfil" />
         </picture>
     </article>
 
@@ -11,16 +11,16 @@
             <div class="update-delete" *ngIf="isLogged">
                 <i
                     class="fa-solid fa-pen-to-square"
-                    [routerLink]="['/editar-perfil', person.id]"
+                    [routerLink]="['/editar-perfil', id]"
                 ></i>
             </div>
         </div>
 
         <h2 class="about-title">
-            Hola, soy {{ person.name }}, encantado de conocerte! <span>👋</span>
+            Hola, soy {{ name }}, encantado de conocerte! <span>👋</span>
         </h2>
         <p class="about-paragraph">
-            {{ person.aboutDescription }}
+            {{ aboutDescription }}
         </p>
     </article>
 </section>

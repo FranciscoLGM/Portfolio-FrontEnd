@@ -7,7 +7,9 @@ import { portfolioService } from 'src/app/services/portfolio.service';
     styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
-    person: any;
+    profession!: string;
+    occupation!: string;
+    heroDescription!: string;
 
     constructor(private portfolioService: portfolioService) {}
 
@@ -16,9 +18,12 @@ export class HeaderComponent implements OnInit {
     }
 
     private getPersonData() {
-        this.portfolioService.getPerson().subscribe((data) => {
-            // console.log(data);
-            this.person = data[0];
+        this.portfolioService.getPerson().subscribe({
+            next: (data) => {
+                this.profession = data[0].profession;
+                this.occupation = data[0].occupation;
+                this.heroDescription = data[0].heroDescription;
+            },
         });
     }
 }

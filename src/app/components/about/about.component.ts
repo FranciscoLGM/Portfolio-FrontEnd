@@ -8,7 +8,10 @@ import { TokenService } from 'src/app/services/token.service';
     styleUrls: ['./about.component.css'],
 })
 export class AboutComponent implements OnInit {
-    person: any;
+    id!: string;
+    imageProfile!: string;
+    name!: string;
+    aboutDescription!: string;
     isLogged = false;
 
     constructor(
@@ -27,9 +30,13 @@ export class AboutComponent implements OnInit {
     }
 
     private getPersonData() {
-        this.portfolioService.getPerson().subscribe((data) => {
-            // console.log(data);
-            this.person = data[0];
+        this.portfolioService.getPerson().subscribe({
+            next: (data) => {
+                this.imageProfile = data[0].imageProfile;
+                this.name = data[0].name;
+                this.aboutDescription = data[0].aboutDescription;
+                this.id = data[0].id;
+            },
         });
     }
 }

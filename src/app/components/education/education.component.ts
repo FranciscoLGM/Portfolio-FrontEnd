@@ -36,16 +36,18 @@ export class EducationComponent implements OnInit {
     }
 
     private getEducationData() {
-        this.portfolioService.getEducation().subscribe((data) => {
-            // console.log(data);
-            this.educations = data;
+        this.portfolioService.getEducation().subscribe({
+            next: (data) => {
+                this.educations = data;
+            },
         });
     }
 
     private getCertificationData() {
-        this.portfolioService.getCertification().subscribe((data) => {
-            // console.log(data);
-            this.certifications = data;
+        this.portfolioService.getCertification().subscribe({
+            next: (data) => {
+                this.certifications = data;
+            },
         });
     }
 
@@ -64,7 +66,7 @@ export class EducationComponent implements OnInit {
             .then((result) => {
                 if (result.value) {
                     this.portfolioService.deleteEducation(id).subscribe({
-                        next: (response) => {
+                        next: (data) => {
                             this.toastr.success(
                                 'Educación eliminada con éxito',
                                 'Educación Eliminada'
@@ -97,7 +99,7 @@ export class EducationComponent implements OnInit {
             .then((result) => {
                 if (result.value) {
                     this.portfolioService.deleteCertification(id).subscribe({
-                        next: (response) => {
+                        next: (data) => {
                             this.toastr.success(
                                 'La Certificación fue eliminada con éxito',
                                 'Certificación Eliminada'

@@ -30,7 +30,7 @@ export class PortfolioGuardService implements CanActivate {
             !this.tokenService.getToken() ||
             expectedRole.indexOf(this.realRole) === -1
         ) {
-            this.router.navigate(['/login']);
+            this.router.navigate(['/']);
             return false;
         }
         return true;

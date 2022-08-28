@@ -32,9 +32,10 @@ export class ProjectsComponent implements OnInit {
     }
 
     private getProjectData() {
-        this.portfolioService.getProject().subscribe((data) => {
-            // console.log(data);
-            this.projects = data;
+        this.portfolioService.getProject().subscribe({
+            next: (data) => {
+                this.projects = data;
+            },
         });
     }
 
@@ -53,7 +54,7 @@ export class ProjectsComponent implements OnInit {
             .then((result) => {
                 if (result.value) {
                     this.portfolioService.deleteProject(id).subscribe({
-                        next: (response) => {
+                        next: (data) => {
                             this.toastr.success(
                                 'El Proyecto fue eliminado con éxito',
                                 'Proyecto Eliminado'

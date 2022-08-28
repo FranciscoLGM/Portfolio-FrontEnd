@@ -31,9 +31,10 @@ export class SkillsComponent implements OnInit {
         }
     }
     private getSkillData() {
-        this.portfolioService.getSkill().subscribe((data) => {
-            // console.log(data);
-            this.skills = data;
+        this.portfolioService.getSkill().subscribe({
+            next: (data) => {
+                this.skills = data;
+            },
         });
     }
 
@@ -52,7 +53,7 @@ export class SkillsComponent implements OnInit {
             .then((result) => {
                 if (result.value) {
                     this.portfolioService.deleteSkill(id).subscribe({
-                        next: (response) => {
+                        next: (data) => {
                             this.toastr.success(
                                 'La Habilidad fue eliminada con éxito',
                                 'Habilidad Eliminada'
