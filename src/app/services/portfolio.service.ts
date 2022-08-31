@@ -12,7 +12,7 @@ import { Skill } from '../models/skill';
     providedIn: 'root',
 })
 export class portfolioService {
-    private baseURL = `http://localhost:8080/api/v1`;
+    private baseURL = `https://portfolio-yo-programo2.herokuapp.com/api/v1`;
 
     constructor(private http: HttpClient) {}
 

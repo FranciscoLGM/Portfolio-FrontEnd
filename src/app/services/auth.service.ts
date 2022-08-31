@@ -9,7 +9,7 @@ import { Signin } from '../models/signin';
     providedIn: 'root',
 })
 export class AuthService {
-    private authURL = `http://localhost:8080/api/v1/auth`;
+    private authURL = `https://portfolio-yo-programo2.herokuapp.com/api/v1/auth`;
 
     constructor(private http: HttpClient) {}
 
