@@ -67,9 +67,8 @@ export class EducationComponent implements OnInit {
                 if (result.value) {
                     this.portfolioService.deleteEducation(id).subscribe({
                         next: (data) => {
-                            this.toastr.success(
-                                'Educación eliminada con éxito',
-                                'Educación Eliminada'
+                            this.toastr.warning(
+                                'Educación eliminada con éxito!'
                             );
                             this.getEducationData();
                         },
@@ -77,7 +76,7 @@ export class EducationComponent implements OnInit {
                 }
             })
             .catch(() => {
-                this.toastr.error('Error al eliminar', 'Error');
+                this.toastr.error('Error al eliminar la Educación');
             })
             .finally(() => {
                 this.getEducationData();
@@ -100,9 +99,8 @@ export class EducationComponent implements OnInit {
                 if (result.value) {
                     this.portfolioService.deleteCertification(id).subscribe({
                         next: (data) => {
-                            this.toastr.success(
-                                'La Certificación fue eliminada con éxito',
-                                'Certificación Eliminada'
+                            this.toastr.warning(
+                                'Certificación eliminada con éxito!'
                             );
                             this.getCertificationData();
                         },
@@ -110,10 +108,7 @@ export class EducationComponent implements OnInit {
                 }
             })
             .catch(() => {
-                this.toastr.error(
-                    'Error al eliminar la Certificación',
-                    'Error'
-                );
+                this.toastr.error('Error al eliminar la Certificación');
             })
             .finally(() => {
                 this.getCertificationData();

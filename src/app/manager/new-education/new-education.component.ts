@@ -53,10 +53,7 @@ export class NewEducationComponent implements OnInit {
             // Actualizar skill
             this.portfolioService.putEducation(education).subscribe({
                 next: (data) => {
-                    this.toastr.info(
-                        'Educación actualizada con éxito',
-                        'Educación Actualizada'
-                    );
+                    this.toastr.info('Educación actualizada con éxito!');
                     this.router.navigate(['/']);
                 },
             });
@@ -64,14 +61,11 @@ export class NewEducationComponent implements OnInit {
             console.log(this.educationForm);
             this.portfolioService.postEducation(education).subscribe({
                 next: (data) => {
-                    this.toastr.success(
-                        'La Educación fue creada con éxito',
-                        'Educación Creada'
-                    );
+                    this.toastr.success('Educación creada con éxito!');
                     this.router.navigate(['/']);
                 },
                 error: (err) => {
-                    this.toastr.error('Error al crear la Educación', 'Error');
+                    this.toastr.error('Error al crear la Educación');
                     console.error(err);
                 },
             });
@@ -94,7 +88,7 @@ export class NewEducationComponent implements OnInit {
                     });
                 },
                 error: (err) => {
-                    this.toastr.error('Error al obtener la Educación', 'Error');
+                    this.toastr.error('Error al obtener la Educación');
                     console.error(err);
                 },
             });

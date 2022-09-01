@@ -54,10 +54,7 @@ export class NewProfileComponent implements OnInit {
             // Actualizar expertise
             this.portfolioService.putPerson(profile).subscribe({
                 next: (data) => {
-                    this.toastr.info(
-                        'Perfil actualizado con éxito',
-                        'Perfil Actualizado'
-                    );
+                    this.toastr.info('Perfil actualizado con éxito!');
                     this.router.navigate(['/']);
                 },
             });
@@ -65,14 +62,11 @@ export class NewProfileComponent implements OnInit {
             // Crear expertise
             this.portfolioService.postPerson(profile).subscribe({
                 next: (data) => {
-                    this.toastr.info(
-                        'Perfil creado con éxito',
-                        'Perfil Creado'
-                    );
+                    this.toastr.info('Perfil creado con éxito!');
                     this.router.navigate(['/']);
                 },
                 error: (err) => {
-                    this.toastr.error('Error al crear el perfil', 'Error');
+                    this.toastr.error('Error al crear el perfil');
                     console.error(err);
                 },
             });
@@ -94,7 +88,7 @@ export class NewProfileComponent implements OnInit {
                     });
                 },
                 error: (err) => {
-                    this.toastr.error('Error al obtener el perfil', 'Error');
+                    this.toastr.error('Error al obtener el perfil');
                     console.error(err);
                 },
             });

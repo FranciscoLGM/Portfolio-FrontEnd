@@ -47,10 +47,7 @@ export class NewProjectComponent implements OnInit {
             // Actualizar skill
             this.portfolioService.putProject(project).subscribe({
                 next: (data) => {
-                    this.toastr.info(
-                        'Proyecto actualizado con éxito',
-                        'Proyecto Actualizado'
-                    );
+                    this.toastr.info('Proyecto actualizado con éxito!');
                     this.router.navigate(['/']);
                 },
             });
@@ -58,14 +55,11 @@ export class NewProjectComponent implements OnInit {
             console.log(this.projectForm);
             this.portfolioService.postProject(project).subscribe({
                 next: (data) => {
-                    this.toastr.success(
-                        'El Proyecto fue creado con éxito',
-                        'Proyecto Creado'
-                    );
+                    this.toastr.success('Proyecto creado con éxito!');
                     this.router.navigate(['/']);
                 },
                 error: (err) => {
-                    this.toastr.error('Error al crear el Proyecto', 'Error');
+                    this.toastr.error('Error al crear el Proyecto');
                     console.error(err);
                 },
             });
@@ -85,7 +79,7 @@ export class NewProjectComponent implements OnInit {
                     });
                 },
                 error: (err) => {
-                    this.toastr.error('Error al obtener el Proyecto', 'Error');
+                    this.toastr.error('Error al obtener el Proyecto');
                     console.error(err);
                 },
             });

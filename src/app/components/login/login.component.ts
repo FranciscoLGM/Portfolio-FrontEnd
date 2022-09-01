@@ -52,19 +52,13 @@ export class LoginComponent implements OnInit {
                 this.tokenService.setUserName(data.userName);
                 this.tokenService.setAuthorities(data.authorities);
                 this.roles = data.authorities;
-                this.toastr.success(
-                    'Bienvenido a la sesión de Administrador',
-                    'Éxito'
-                );
+                this.toastr.success('Bienvenido a la sesión de Administrador');
                 this.router.navigate(['/']);
             },
             error: (err) => {
                 this.isLogged = false;
                 this.isLoginFail = true;
-                this.toastr.error(
-                    'Hubo un error en el inicio de sesión!',
-                    'Error'
-                );
+                this.toastr.error('Error al iniciar sesión!');
                 this.signinForm.reset();
                 console.error(err);
             },

@@ -55,9 +55,8 @@ export class ProjectsComponent implements OnInit {
                 if (result.value) {
                     this.portfolioService.deleteProject(id).subscribe({
                         next: (data) => {
-                            this.toastr.success(
-                                'El Proyecto fue eliminado con éxito',
-                                'Proyecto Eliminado'
+                            this.toastr.warning(
+                                'Proyecto eliminado con éxito!'
                             );
                             this.getProjectData();
                         },
@@ -65,7 +64,7 @@ export class ProjectsComponent implements OnInit {
                 }
             })
             .catch(() => {
-                this.toastr.error('Error al eliminar el Proyecto', 'Error');
+                this.toastr.error('Error al eliminar el Proyecto');
             })
             .finally(() => {
                 this.getProjectData();

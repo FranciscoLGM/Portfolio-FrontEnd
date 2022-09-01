@@ -55,9 +55,8 @@ export class ExpertiseComponent implements OnInit {
                 if (result.value) {
                     this.portfolioService.deleteExpertise(id).subscribe({
                         next: (data) => {
-                            this.toastr.success(
-                                'Experiencia eliminada con éxito',
-                                'Experiencia Eliminada'
+                            this.toastr.warning(
+                                'Experiencia eliminada con éxito'
                             );
                             this.getExpertiseData();
                         },
@@ -65,7 +64,7 @@ export class ExpertiseComponent implements OnInit {
                 }
             })
             .catch(() => {
-                this.toastr.error('Error al eliminar la experiencia', 'Error');
+                this.toastr.error('Error al eliminar la experiencia');
             })
             .finally(() => {
                 this.getExpertiseData();

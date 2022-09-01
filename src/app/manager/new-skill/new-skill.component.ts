@@ -44,31 +44,22 @@ export class NewSkillComponent implements OnInit {
             // Actualizar skill
             this.portfolioService.putSkill(skill).subscribe({
                 next: (data) => {
-                    this.toastr.info(
-                        'Habilidad actualizada con éxito',
-                        'Habilidad Actualizada'
-                    );
+                    this.toastr.info('Habilidad actualizada con éxito!');
                     this.router.navigate(['/']);
                 },
                 error: (err) => {
-                    this.toastr.error(
-                        'Error al actualizar la habilidad',
-                        'Error'
-                    );
+                    this.toastr.error('Error al actualizar la habilidad');
                 },
             });
         } else {
             console.log(this.skillForm);
             this.portfolioService.postSkill(skill).subscribe({
                 next: (data) => {
-                    this.toastr.success(
-                        'La Habilidad fue creada con éxito',
-                        'Habilidad Creada'
-                    );
+                    this.toastr.success('Habilidad creada con éxito!');
                     this.router.navigate(['/']);
                 },
                 error: (err) => {
-                    this.toastr.error('Error al crear la Habilidad', 'Error');
+                    this.toastr.error('Error al crear la Habilidad');
                     console.error(err);
                 },
             });
@@ -86,7 +77,7 @@ export class NewSkillComponent implements OnInit {
                     });
                 },
                 error: (err) => {
-                    this.toastr.error('Error al obtener la Habilidad', 'Error');
+                    this.toastr.error('Error al obtener la Habilidad');
                     console.error(err);
                 },
             });

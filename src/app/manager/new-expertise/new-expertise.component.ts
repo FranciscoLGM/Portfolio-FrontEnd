@@ -54,10 +54,7 @@ export class NewExpertiseComponent implements OnInit {
             // Actualizar expertise
             this.portfolioService.putExpertise(expertise).subscribe({
                 next: (data) => {
-                    this.toastr.info(
-                        'Experiencia actualizada con éxito',
-                        'Experiencia Actualizada'
-                    );
+                    this.toastr.info('Experiencia actualizada con éxito!');
                     this.router.navigate(['/']);
                 },
             });
@@ -65,14 +62,11 @@ export class NewExpertiseComponent implements OnInit {
             console.log(this.expertiseForm);
             this.portfolioService.postExpertise(expertise).subscribe({
                 next: (data) => {
-                    this.toastr.success(
-                        'La Experiencia fue creada con éxito',
-                        'Experiencia Creada'
-                    );
+                    this.toastr.success('Experiencia creada con éxito!');
                     this.router.navigate(['/']);
                 },
                 error: (err) => {
-                    this.toastr.error('Error al crear la Experiencia', 'Error');
+                    this.toastr.error('Error al crear la Experiencia');
                     console.error(err);
                 },
             });
@@ -95,10 +89,7 @@ export class NewExpertiseComponent implements OnInit {
                     });
                 },
                 error: (err) => {
-                    this.toastr.error(
-                        'Error al obtener la Experiencia',
-                        'Error'
-                    );
+                    this.toastr.error('Error al obtener la Experiencia');
                     console.error(err);
                 },
             });

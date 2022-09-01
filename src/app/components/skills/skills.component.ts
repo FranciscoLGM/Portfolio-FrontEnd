@@ -54,9 +54,8 @@ export class SkillsComponent implements OnInit {
                 if (result.value) {
                     this.portfolioService.deleteSkill(id).subscribe({
                         next: (data) => {
-                            this.toastr.success(
-                                'La Habilidad fue eliminada con éxito',
-                                'Habilidad Eliminada'
+                            this.toastr.warning(
+                                'Habilidad eliminada con éxito!'
                             );
                             this.getSkillData();
                         },
@@ -64,7 +63,7 @@ export class SkillsComponent implements OnInit {
                 }
             })
             .catch(() => {
-                this.toastr.error('Error al eliminar la Habilidad', 'Error');
+                this.toastr.error('Error al eliminar la Habilidad');
             })
             .finally(() => {
                 this.getSkillData();

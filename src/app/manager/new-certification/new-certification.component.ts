@@ -54,34 +54,22 @@ export class NewCertificationComponent implements OnInit {
             // Actualizar skill
             this.portfolioService.putCertification(certification).subscribe({
                 next: (data) => {
-                    this.toastr.info(
-                        'Certificación actualizada con éxito',
-                        'Certificación Actualizada'
-                    );
+                    this.toastr.info('Certificación actualizada con éxito');
                     this.router.navigate(['/']);
                 },
                 error: (err) => {
-                    this.toastr.error(
-                        'Error al actualizar la Certificación',
-                        'Error'
-                    );
+                    this.toastr.error('Error al actualizar la Certificación');
                 },
             });
         } else {
             console.log(this.certificationForm);
             this.portfolioService.postCertification(certification).subscribe({
                 next: (data) => {
-                    this.toastr.success(
-                        'La Certificación fue creada con éxito',
-                        'Certificación Creada'
-                    );
+                    this.toastr.success('Certificación creada con éxito!');
                     this.router.navigate(['/']);
                 },
                 error: (err) => {
-                    this.toastr.error(
-                        'Error al crear la Certificación',
-                        'Error'
-                    );
+                    this.toastr.error('Error al crear la Certificación');
                     console.error(err);
                 },
             });
@@ -104,10 +92,7 @@ export class NewCertificationComponent implements OnInit {
                     });
                 },
                 error: (err) => {
-                    this.toastr.error(
-                        'Error al obtener la Certificación',
-                        'Error'
-                    );
+                    this.toastr.error('Error al obtener la Certificación');
                     console.error(err);
                 },
             });
