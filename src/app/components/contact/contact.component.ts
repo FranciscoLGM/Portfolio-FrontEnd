@@ -21,6 +21,9 @@ export class ContactComponent implements OnInit {
             name: ['', Validators.required],
             email: ['', Validators.required],
             message: ['', Validators.required],
+            _honey: [''],
+            _subject: ['New submission!'],
+            _template: ['table'],
         });
     }
 
@@ -31,14 +34,14 @@ export class ContactComponent implements OnInit {
             name: this.contactForm.get('name')?.value,
             email: this.contactForm.get('email')?.value,
             message: this.contactForm.get('message')?.value,
+            _honey: this.contactForm.get('_honey')?.value,
+            _subject: this.contactForm.get('_subject')?.value,
+            _template: this.contactForm.get('_template')?.value,
         };
 
         this.contactFormService.postForm(contact).subscribe({
             next: (data) => {
-                this.toastr.info(
-                    'Muchas gracias por tu mensaje',
-                    'Mensaje enviado!'
-                );
+                this.toastr.info('Mensaje enviado correctamente!');
                 this.contactForm.reset();
             },
             error: (err) => {

@@ -70,12 +70,26 @@
                     Debes ingresar un mensaje
                 </label>
             </fieldset>
-            <input type="hidden" name="_subject" value="Nuevo mensaje!" />
-            <input
-                type="hidden"
-                name="_autoresponse"
-                value="¡Muchas gracias por tu mensaje! lo recibí correctamente 😊. Me comunicaré contigo en las próximas 48 horas."
-            />
+            <fieldset>
+                <input
+                    type="text"
+                    name="_honey"
+                    style="display: none"
+                    formControlName="_honey"
+                />
+                <input
+                    type="hidden"
+                    name="_subject"
+                    value="New submission!"
+                    formControlName="_subject"
+                />
+                <input
+                    type="hidden"
+                    name="_template"
+                    value="table"
+                    formControlName="_template"
+                />
+            </fieldset>
             <fieldset>
                 <button type="submit" [disabled]="!contactForm.valid">
                     Enviar
