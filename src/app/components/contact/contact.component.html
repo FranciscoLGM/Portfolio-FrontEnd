@@ -9,10 +9,7 @@
     </article>
 
     <article>
-        <form
-            action="https://formsubmit.co/5c8c47e90c490c56d8cd72090fb45171"
-            method="POST"
-        >
+        <form [formGroup]="contactForm" (ngSubmit)="postFormData()">
             <fieldset>
                 <label for="name">Nombre</label>
                 <input
@@ -21,7 +18,17 @@
                     id="name"
                     placeholder="Ingresa tú nombre"
                     required
+                    formControlName="name"
                 />
+                <label
+                    class="alert"
+                    *ngIf="
+                        contactForm.get('name')?.hasError('required') &&
+                        contactForm.get('name')?.touched
+                    "
+                >
+                    Debes ingresar tú nombre
+                </label>
             </fieldset>
             <fieldset>
                 <label for="email">Email</label>
@@ -32,7 +39,17 @@
                     placeholder="Ingresa tú email"
                     required
                     _replyto
+                    formControlName="email"
                 />
+                <label
+                    class="alert"
+                    *ngIf="
+                        contactForm.get('email')?.hasError('required') &&
+                        contactForm.get('email')?.touched
+                    "
+                >
+                    Debes ingresar tú email
+                </label>
             </fieldset>
             <fieldset>
                 <label for="message">Mensaje</label>
@@ -41,7 +58,17 @@
                     id="message"
                     placeholder="Ingresa tú mensaje"
                     required
+                    formControlName="message"
                 ></textarea>
+                <label
+                    class="alert"
+                    *ngIf="
+                        contactForm.get('message')?.hasError('required') &&
+                        contactForm.get('message')?.touched
+                    "
+                >
+                    Debes ingresar un mensaje
+                </label>
             </fieldset>
             <input type="hidden" name="_subject" value="Nuevo mensaje!" />
             <input
@@ -50,7 +77,9 @@
                 value="¡Muchas gracias por tu mensaje! lo recibí correctamente 😊. Me comunicaré contigo en las próximas 48 horas."
             />
             <fieldset>
-                <button type="submit">Enviar</button>
+                <button type="submit" [disabled]="!contactForm.valid">
+                    Enviar
+                </button>
             </fieldset>
         </form>
     </article>
