@@ -50,6 +50,10 @@ export class NewProjectComponent implements OnInit {
                     this.toastr.info('Proyecto actualizado con éxito!');
                     this.router.navigate(['/']);
                 },
+                error: (err) => {
+                    this.toastr.error('Error al actualizar el Proyecto');
+                    console.error(err);
+                },
             });
         } else {
             console.log(this.projectForm);

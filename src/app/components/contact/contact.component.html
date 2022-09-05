@@ -1,100 +1,102 @@
-<section class="contact container" id="contact">
-    <article>
-        <h2 class="contact-title">Trabajemos juntos...</h2>
-        <p class="contact-text">
-            Si quieres hablar de un proyecto o simplemente tienes una pregunta,
-            rellena el siguiente formulario. Mi objetivo es responder en un
-            plazo de 2 días.
-        </p>
-    </article>
+<div *ngIf="!isLogged">
+    <section class="contact container" id="contact">
+        <article>
+            <h2 class="contact-title">Trabajemos juntos...</h2>
+            <p class="contact-text">
+                Si quieres hablar de un proyecto o simplemente tienes una
+                pregunta, rellena el siguiente formulario. Mi objetivo es
+                responder en un plazo de 2 días.
+            </p>
+        </article>
 
-    <article>
-        <form [formGroup]="contactForm" (ngSubmit)="postFormData()">
-            <fieldset>
-                <label for="name">Nombre</label>
-                <input
-                    type="text"
-                    name="name"
-                    id="name"
-                    placeholder="Ingresa tú nombre"
-                    required
-                    formControlName="name"
-                />
-                <label
-                    class="alert"
-                    *ngIf="
-                        contactForm.get('name')?.hasError('required') &&
-                        contactForm.get('name')?.touched
-                    "
-                >
-                    Debes ingresar tú nombre
-                </label>
-            </fieldset>
-            <fieldset>
-                <label for="email">Email</label>
-                <input
-                    type="email"
-                    name="email"
-                    id="email"
-                    placeholder="Ingresa tú email"
-                    required
-                    _replyto
-                    formControlName="email"
-                />
-                <label
-                    class="alert"
-                    *ngIf="
-                        contactForm.get('email')?.hasError('required') &&
-                        contactForm.get('email')?.touched
-                    "
-                >
-                    Debes ingresar tú email
-                </label>
-            </fieldset>
-            <fieldset>
-                <label for="message">Mensaje</label>
-                <textarea
-                    name="message"
-                    id="message"
-                    placeholder="Ingresa tú mensaje"
-                    required
-                    formControlName="message"
-                ></textarea>
-                <label
-                    class="alert"
-                    *ngIf="
-                        contactForm.get('message')?.hasError('required') &&
-                        contactForm.get('message')?.touched
-                    "
-                >
-                    Debes ingresar un mensaje
-                </label>
-            </fieldset>
-            <fieldset>
-                <input
-                    type="text"
-                    name="_honey"
-                    style="display: none"
-                    formControlName="_honey"
-                />
-                <input
-                    type="hidden"
-                    name="_subject"
-                    value="New submission!"
-                    formControlName="_subject"
-                />
-                <input
-                    type="hidden"
-                    name="_template"
-                    value="table"
-                    formControlName="_template"
-                />
-            </fieldset>
-            <fieldset>
-                <button type="submit" [disabled]="!contactForm.valid">
-                    Enviar
-                </button>
-            </fieldset>
-        </form>
-    </article>
-</section>
+        <article>
+            <form [formGroup]="contactForm" (ngSubmit)="postFormData()">
+                <fieldset>
+                    <label for="name">Nombre</label>
+                    <input
+                        type="text"
+                        name="name"
+                        id="name"
+                        placeholder="Ingresa tú nombre"
+                        required
+                        formControlName="name"
+                    />
+                    <label
+                        class="alert"
+                        *ngIf="
+                            contactForm.get('name')?.hasError('required') &&
+                            contactForm.get('name')?.touched
+                        "
+                    >
+                        Debes ingresar tú nombre
+                    </label>
+                </fieldset>
+                <fieldset>
+                    <label for="email">Email</label>
+                    <input
+                        type="email"
+                        name="email"
+                        id="email"
+                        placeholder="Ingresa tú email"
+                        required
+                        _replyto
+                        formControlName="email"
+                    />
+                    <label
+                        class="alert"
+                        *ngIf="
+                            contactForm.get('email')?.hasError('pattern') &&
+                            contactForm.get('email')?.touched
+                        "
+                    >
+                        Debes ingresar un email valido
+                    </label>
+                </fieldset>
+                <fieldset>
+                    <label for="message">Mensaje</label>
+                    <textarea
+                        name="message"
+                        id="message"
+                        placeholder="Ingresa tú mensaje"
+                        required
+                        formControlName="message"
+                    ></textarea>
+                    <label
+                        class="alert"
+                        *ngIf="
+                            contactForm.get('message')?.hasError('required') &&
+                            contactForm.get('message')?.touched
+                        "
+                    >
+                        Debes ingresar un mensaje
+                    </label>
+                </fieldset>
+                <fieldset>
+                    <input
+                        type="text"
+                        name="_honey"
+                        style="display: none"
+                        formControlName="_honey"
+                    />
+                    <input
+                        type="hidden"
+                        name="_subject"
+                        value="New submission!"
+                        formControlName="_subject"
+                    />
+                    <input
+                        type="hidden"
+                        name="_template"
+                        value="table"
+                        formControlName="_template"
+                    />
+                </fieldset>
+                <fieldset>
+                    <button type="submit" [disabled]="!contactForm.valid">
+                        Enviar
+                    </button>
+                </fieldset>
+            </form>
+        </article>
+    </section>
+</div>

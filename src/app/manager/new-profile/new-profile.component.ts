@@ -28,7 +28,7 @@ export class NewProfileComponent implements OnInit {
             profession: ['', Validators.required],
             occupation: ['', Validators.required],
             heroDescription: ['', Validators.required],
-            aboutDescription: ['', Validators.required],
+            aboutDescription: ['', Validators.maxLength(550)],
             imageProfile: ['', Validators.required],
         });
         this.id = this.activeRoute.snapshot.paramMap.get('id')!; // ! para que no sea null
@@ -56,6 +56,10 @@ export class NewProfileComponent implements OnInit {
                 next: (data) => {
                     this.toastr.info('Perfil actualizado con éxito!');
                     this.router.navigate(['/']);
+                },
+                error: (err) => {
+                    this.toastr.error('Error al actualizar el perfil');
+                    console.error(err);
                 },
             });
         } else {

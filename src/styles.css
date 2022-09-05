@@ -118,12 +118,14 @@ a {
 }
 
 .card-logo {
-    width: 15rem;
+    width: 10rem;
+    min-width: 10rem;
     padding: 0 1rem;
 }
 
 .img-logo {
     width: 100%;
+    padding: 0.5rem 1.5rem 0 0;
 }
 
 .card-subtitle {

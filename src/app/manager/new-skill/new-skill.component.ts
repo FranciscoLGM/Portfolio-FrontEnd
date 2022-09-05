@@ -24,7 +24,7 @@ export class NewSkillComponent implements OnInit {
     ) {
         this.skillForm = this.formBuilder.group({
             skill: ['', Validators.required],
-            rate: ['', Validators.required],
+            rate: ['', Validators.max(100)],
         });
         this.id = this.activeRoute.snapshot.paramMap.get('id')!; // ! para que no sea null
     }

@@ -134,25 +134,17 @@
                     </label>
                 </fieldset>
                 <fieldset>
-                    <label for="description">Descripción de la carrera</label>
+                    <label for="description"
+                        >Descripción de la carrera
+                        <span class="optional">(Opcional)</span></label
+                    >
                     <textarea
                         name="description"
                         id="description"
-                        required
                         placeholder="Describe tú experiencia"
                         formControlName="description"
+                        maxlength="255"
                     ></textarea>
-                    <label
-                        class="alert"
-                        *ngIf="
-                            educationForm
-                                .get('description')
-                                ?.hasError('required') &&
-                            educationForm.get('description')?.touched
-                        "
-                    >
-                        Debes ingresar una descripción
-                    </label>
                 </fieldset>
                 <fieldset class="btn-flex">
                     <button type="submit" [disabled]="!educationForm.valid">

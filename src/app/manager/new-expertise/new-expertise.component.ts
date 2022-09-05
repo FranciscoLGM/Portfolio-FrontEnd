@@ -29,7 +29,7 @@ export class NewExpertiseComponent implements OnInit {
             fin: ['', Validators.required],
             city: ['', Validators.required],
             imageCompany: ['', Validators.required],
-            description: ['', Validators.required],
+            description: ['', Validators.maxLength(550)],
         });
         this.id = this.activeRoute.snapshot.paramMap.get('id')!; // ! para que no sea null
     }
@@ -56,6 +56,10 @@ export class NewExpertiseComponent implements OnInit {
                 next: (data) => {
                     this.toastr.info('Experiencia actualizada con éxito!');
                     this.router.navigate(['/']);
+                },
+                error: (err) => {
+                    this.toastr.error('Error al actualizar la Experiencia');
+                    console.error(err);
                 },
             });
         } else {

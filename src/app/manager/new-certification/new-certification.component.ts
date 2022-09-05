@@ -29,7 +29,7 @@ export class NewCertificationComponent implements OnInit {
             fin: ['', Validators.required],
             city: ['', Validators.required],
             imageUniversity: ['', Validators.required],
-            description: ['', Validators.required],
+            description: [''],
         });
         this.id = this.activeRoute.snapshot.paramMap.get('id')!; // ! para que no sea null
     }

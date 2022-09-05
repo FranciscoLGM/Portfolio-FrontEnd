@@ -43,11 +43,11 @@
                     <label
                         class="alert"
                         *ngIf="
-                            skillForm.get('rate')?.hasError('required') &&
+                            skillForm.get('rate')?.hasError('max') &&
                             skillForm.get('rate')?.touched
                         "
                     >
-                        Debes ingresar un porcentaje de conocimiento
+                        Debes ingresar un porcentaje valido
                     </label>
                 </fieldset>
                 <fieldset class="btn-flex">

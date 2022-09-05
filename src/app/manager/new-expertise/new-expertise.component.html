@@ -141,17 +141,18 @@
                         required
                         placeholder="Describe tú experiencia"
                         formControlName="description"
+                        maxlength="550"
                     ></textarea>
                     <label
                         class="alert"
                         *ngIf="
                             expertiseForm
                                 .get('description')
-                                ?.hasError('required') &&
+                                ?.hasError('maxlength') &&
                             expertiseForm.get('description')?.touched
                         "
                     >
-                        Debes ingresar una descripción
+                        Debes ingresar una descripción de hasta 550 caracteres
                     </label>
                 </fieldset>
                 <fieldset class="btn-flex">

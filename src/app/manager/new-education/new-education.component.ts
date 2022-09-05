@@ -29,7 +29,7 @@ export class NewEducationComponent implements OnInit {
             fin: ['', Validators.required],
             city: ['', Validators.required],
             imageUniversity: ['', Validators.required],
-            description: ['', Validators.required],
+            description: [''],
         });
         this.id = this.activeRoute.snapshot.paramMap.get('id')!; // ! para que no sea null
     }
@@ -55,6 +55,10 @@ export class NewEducationComponent implements OnInit {
                 next: (data) => {
                     this.toastr.info('Educación actualizada con éxito!');
                     this.router.navigate(['/']);
+                },
+                error: (err) => {
+                    this.toastr.error('Error al actualizar la Educación');
+                    console.error(err);
                 },
             });
         } else {

@@ -24,7 +24,7 @@
                             profileForm.get('name')?.touched
                         "
                     >
-                        Debes ingresar un nombre
+                        Debes ingresar tú nombre
                     </label>
                 </fieldset>
                 <fieldset>
@@ -34,7 +34,7 @@
                         name="lastname"
                         id="lastname"
                         required
-                        placeholder="Ingresa el apellido"
+                        placeholder="Ingresa tú apellido"
                         formControlName="lastname"
                     />
                     <label
@@ -44,7 +44,7 @@
                             profileForm.get('lastname')?.touched
                         "
                     >
-                        Debes ingresar un apellido
+                        Debes ingresar tú apellido
                     </label>
                 </fieldset>
                 <fieldset>
@@ -54,7 +54,7 @@
                         name="profession"
                         id="profession"
                         required
-                        placeholder="Ingresa la profesión"
+                        placeholder="Ingresa tú profesión"
                         formControlName="profession"
                     />
                     <label
@@ -66,7 +66,7 @@
                             profileForm.get('profession')?.touched
                         "
                     >
-                        Debes ingresar una profesión
+                        Debes ingresar tú profesión
                     </label>
                 </fieldset>
                 <fieldset>
@@ -76,7 +76,7 @@
                         name="occupation"
                         id="occupation"
                         required
-                        placeholder="Ingresa la ocupación"
+                        placeholder="Ingresa tú ocupación"
                         formControlName="occupation"
                     />
                     <label
@@ -88,7 +88,7 @@
                             profileForm.get('occupation')?.touched
                         "
                     >
-                        Debes ingresar una ocupación
+                        Debes ingresar tú ocupación
                     </label>
                 </fieldset>
                 <fieldset>
@@ -122,17 +122,18 @@
                         required
                         placeholder="Ingresa una descripción para el acerca de"
                         formControlName="aboutDescription"
+                        maxlength="550"
                     ></textarea>
                     <label
                         class="alert"
                         *ngIf="
                             profileForm
                                 .get('aboutDescription')
-                                ?.hasError('required') &&
+                                ?.hasError('maxlength') &&
                             profileForm.get('aboutDescription')?.touched
                         "
                     >
-                        Debes ingresar una descripción para la sección acerca de
+                        Debes ingresar una descripción de hasta 550 caracteres
                     </label>
                 </fieldset>
                 <fieldset>
@@ -142,7 +143,7 @@
                         name="imageProfile"
                         id="imageProfile"
                         required
-                        placeholder="Ingresa la ruta de la imágen de perfil"
+                        placeholder="Ingresa la ruta de tú imágen de perfil"
                         formControlName="imageProfile"
                     />
                     <label
@@ -154,7 +155,7 @@
                             profileForm.get('imageProfile')?.touched
                         "
                     >
-                        Debes ingresar una ruta de la imágen de perfil
+                        Debes ingresar la ruta de tú imágen de perfil
                     </label>
                 </fieldset>
                 <fieldset class="btn-flex">
