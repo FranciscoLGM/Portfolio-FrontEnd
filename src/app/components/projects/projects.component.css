@@ -45,6 +45,10 @@ figure > a {
     color: #abbaab;
 }
 
+figure img {
+    max-width: 120rem;
+}
+
 .project-item img {
     width: 100%;
 }
