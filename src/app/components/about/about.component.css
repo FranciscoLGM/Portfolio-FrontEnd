@@ -41,3 +41,16 @@
     color: inherit;
     padding: 0 2rem;
 }
+
+@media (max-width: 500px) {
+    .about {
+        height: auto;
+    }
+
+    .about-container {
+        height: auto;
+    }
+    .about-avatar {
+        max-width: 150px;
+    }
+}

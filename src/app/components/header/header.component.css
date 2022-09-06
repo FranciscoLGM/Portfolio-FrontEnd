@@ -57,3 +57,12 @@
         transform: translateY(0);
     }
 }
+
+@media (max-width: 500px) {
+    .banner {
+        height: calc(50vh - 3rem);
+    }
+    .banner-title {
+        font-size: 2.8rem;
+    }
+}
