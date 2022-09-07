@@ -42,6 +42,14 @@
     padding: 0 2rem;
 }
 
+/* Media queries */
+
+@media (max-width: 850px) {
+    .about-avatar {
+        max-width: 250px;
+    }
+}
+
 @media (max-width: 500px) {
     .about {
         height: auto;

@@ -58,9 +58,17 @@
     }
 }
 
+/* Media queries */
+
+@media (max-width: 850px) {
+    .banner-title {
+        font-size: 4rem;
+    }
+}
+
 @media (max-width: 500px) {
     .banner {
-        height: calc(50vh - 3rem);
+        height: calc(60vh - 3rem);
     }
     .banner-title {
         font-size: 2.8rem;

@@ -199,11 +199,24 @@ a {
     font-size: 1.6rem !important;
 }
 
-@media (max-width: 500px) {
+/* Media queries */
+
+@media (max-width: 850px) {
+    .card-text {
+        display: none;
+    }
+}
+
+@media (max-width: 650px) {
     :root {
         --bs-font-size-h2: 2.5rem;
     }
+
     .card-title {
         text-align: center;
+    }
+
+    .card-subtitle {
+        font-size: 1.6rem;
     }
 }
