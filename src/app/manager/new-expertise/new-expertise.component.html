@@ -14,7 +14,7 @@
                         name="position"
                         id="position"
                         required
-                        placeholder="Desarrollador Front End"
+                        placeholder="Ingresa una posición"
                         formControlName="position"
                     />
                     <label
@@ -36,7 +36,7 @@
                         name="company"
                         id="company"
                         required
-                        placeholder="Mercado Libre"
+                        placeholder="Ingresa el nombre de la empresa"
                         formControlName="company"
                     />
                     <label
@@ -58,7 +58,7 @@
                         name="inicio"
                         id="inicio"
                         required
-                        placeholder="Enero 2022"
+                        placeholder="Ingresa la fecha de inicio"
                         formControlName="inicio"
                     />
                     <label
@@ -78,7 +78,7 @@
                         name="fin"
                         id="fin"
                         required
-                        placeholder="Actualidad"
+                        placeholder="Ingresa la fecha de finalización"
                         formControlName="fin"
                     />
                     <label
@@ -98,7 +98,7 @@
                         name="city"
                         id="city"
                         required
-                        placeholder="Ciudad Autónoma de Buenos Aires"
+                        placeholder="Ingresa la ciudad"
                         formControlName="city"
                     />
                     <label
@@ -118,7 +118,7 @@
                         name="imageCompany"
                         id="imageCompany"
                         required
-                        placeholder="..//assets/images/logo-ml.png"
+                        placeholder="Ingresa la URL del logo de la empresa"
                         formControlName="imageCompany"
                     />
                     <label
@@ -148,7 +148,7 @@
                         *ngIf="
                             expertiseForm
                                 .get('description')
-                                ?.hasError('maxlength') &&
+                                ?.hasError('required') &&
                             expertiseForm.get('description')?.touched
                         "
                     >

@@ -29,7 +29,7 @@ export class NewExpertiseComponent implements OnInit {
             fin: ['', Validators.required],
             city: ['', Validators.required],
             imageCompany: ['', Validators.required],
-            description: ['', Validators.maxLength(550)],
+            description: ['', Validators.required],
         });
         this.id = this.activeRoute.snapshot.paramMap.get('id')!; // ! para que no sea null
     }

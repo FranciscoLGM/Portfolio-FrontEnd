@@ -23,4 +23,10 @@ export class NavbarComponent implements OnInit {
         this.tokenService.signOut();
         window.location.reload();
     }
+
+    onMenu() {
+        document.getElementById('menu')?.classList.toggle('active');
+        document.getElementById('nav')?.classList.toggle('active');
+        document.getElementById('menu-bg')?.classList.toggle('change');
+    }
 }
