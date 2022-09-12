@@ -44,7 +44,7 @@ export class NewSkillComponent implements OnInit {
             // Actualizar skill
             this.portfolioService.putSkill(skill).subscribe({
                 next: (data) => {
-                    this.toastr.info('Habilidad actualizada con éxito!');
+                    this.toastr.info('Habilidad actualizada!');
                     this.router.navigate(['/']);
                 },
                 error: (err) => {
@@ -52,10 +52,11 @@ export class NewSkillComponent implements OnInit {
                 },
             });
         } else {
-            console.log(this.skillForm);
+            // console.log(this.skillForm);
+            // Crear Skill
             this.portfolioService.postSkill(skill).subscribe({
                 next: (data) => {
-                    this.toastr.success('Habilidad creada con éxito!');
+                    this.toastr.success('Habilidad creada!');
                     this.router.navigate(['/']);
                 },
                 error: (err) => {
