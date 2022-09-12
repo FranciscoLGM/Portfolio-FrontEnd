@@ -54,7 +54,7 @@ export class NewExpertiseComponent implements OnInit {
             // Actualizar expertise
             this.portfolioService.putExpertise(expertise).subscribe({
                 next: (data) => {
-                    this.toastr.info('Experiencia actualizada con éxito!');
+                    this.toastr.info('Experiencia actualizada!');
                     this.router.navigate(['/']);
                 },
                 error: (err) => {
@@ -63,10 +63,11 @@ export class NewExpertiseComponent implements OnInit {
                 },
             });
         } else {
-            console.log(this.expertiseForm);
+            // console.log(this.expertiseForm);
+            // Crear Expertise
             this.portfolioService.postExpertise(expertise).subscribe({
                 next: (data) => {
-                    this.toastr.success('Experiencia creada con éxito!');
+                    this.toastr.success('Experiencia creada!');
                     this.router.navigate(['/']);
                 },
                 error: (err) => {

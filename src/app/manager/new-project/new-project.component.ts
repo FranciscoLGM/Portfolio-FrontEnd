@@ -44,10 +44,10 @@ export class NewProjectComponent implements OnInit {
             id: Number(this.id),
         };
         if (this.id !== null) {
-            // Actualizar skill
+            // Actualizar project
             this.portfolioService.putProject(project).subscribe({
                 next: (data) => {
-                    this.toastr.info('Proyecto actualizado con éxito!');
+                    this.toastr.info('Proyecto actualizado!');
                     this.router.navigate(['/']);
                 },
                 error: (err) => {
@@ -56,10 +56,11 @@ export class NewProjectComponent implements OnInit {
                 },
             });
         } else {
-            console.log(this.projectForm);
+            // console.log(this.projectForm);
+            // Crear Project
             this.portfolioService.postProject(project).subscribe({
                 next: (data) => {
-                    this.toastr.success('Proyecto creado con éxito!');
+                    this.toastr.success('Proyecto creado!');
                     this.router.navigate(['/']);
                 },
                 error: (err) => {

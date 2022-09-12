@@ -129,7 +129,7 @@
                         *ngIf="
                             profileForm
                                 .get('aboutDescription')
-                                ?.hasError('maxlength') &&
+                                ?.hasError('required') &&
                             profileForm.get('aboutDescription')?.touched
                         "
                     >

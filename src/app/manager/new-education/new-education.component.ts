@@ -50,10 +50,10 @@ export class NewEducationComponent implements OnInit {
             id: Number(this.id),
         };
         if (this.id !== null) {
-            // Actualizar skill
+            // Actualizar Education
             this.portfolioService.putEducation(education).subscribe({
                 next: (data) => {
-                    this.toastr.info('Educación actualizada con éxito!');
+                    this.toastr.info('Educación actualizada!');
                     this.router.navigate(['/']);
                 },
                 error: (err) => {
@@ -62,10 +62,11 @@ export class NewEducationComponent implements OnInit {
                 },
             });
         } else {
-            console.log(this.educationForm);
+            // console.log(this.educationForm);
+            // Crear Education
             this.portfolioService.postEducation(education).subscribe({
                 next: (data) => {
-                    this.toastr.success('Educación creada con éxito!');
+                    this.toastr.success('Educación creada!');
                     this.router.navigate(['/']);
                 },
                 error: (err) => {

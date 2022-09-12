@@ -3,15 +3,8 @@
 .projects {
     text-align: center;
     color: var(--bs-text-color);
-    padding: 8rem 0;
-    margin: 6rem 0 0 0;
-}
-
-.projects-text {
-    font-size: var(--bs-font-size-h2);
-    font-weight: 700;
-    padding: 0 0 8rem 0;
-    color: var(--bs-text-color-dark);
+    padding: 3rem 0;
+    margin-bottom: 6rem;
 }
 
 .projects-grid {

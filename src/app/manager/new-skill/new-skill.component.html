@@ -43,8 +43,9 @@
                     <label
                         class="alert"
                         *ngIf="
-                            skillForm.get('rate')?.hasError('max') &&
-                            skillForm.get('rate')?.touched
+                            skillForm.get('rate')?.hasError('min') ||
+                            (skillForm.get('rate')?.hasError('max') &&
+                                skillForm.get('rate')?.touched)
                         "
                     >
                         Debes ingresar un porcentaje valido

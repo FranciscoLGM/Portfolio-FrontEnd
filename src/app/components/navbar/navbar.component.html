@@ -29,7 +29,7 @@
             <div id="barra2" class="barra"></div>
             <div id="barra3" class="barra"></div>
         </div>
-        <section class="nav" id="nav">
+        <section class="nav menu-text-animation" id="nav">
             <ul>
                 <li *ngIf="!isLogged">
                     <a routerLink="/login"
@@ -53,12 +53,15 @@
                     <a href="#education">Educación</a>
                 </li>
                 <li>
+                    <a href="#certification">Licencias</a>
+                </li>
+                <li>
                     <a href="#skills">Habilidades</a>
                 </li>
                 <li>
                     <a href="#projects">Proyectos</a>
                 </li>
-                <li>
+                <li *ngIf="!isLogged">
                     <a href="#contact">Contacto</a>
                 </li>
             </ul>

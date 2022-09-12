@@ -51,10 +51,10 @@ export class NewCertificationComponent implements OnInit {
             id: Number(this.id),
         };
         if (this.id !== null) {
-            // Actualizar skill
+            // Actualizar Certification
             this.portfolioService.putCertification(certification).subscribe({
                 next: (data) => {
-                    this.toastr.info('Certificación actualizada con éxito');
+                    this.toastr.info('Certificación actualizada!');
                     this.router.navigate(['/']);
                 },
                 error: (err) => {
@@ -62,10 +62,11 @@ export class NewCertificationComponent implements OnInit {
                 },
             });
         } else {
-            console.log(this.certificationForm);
+            // console.log(this.certificationForm);
+            // Crear Certification
             this.portfolioService.postCertification(certification).subscribe({
                 next: (data) => {
-                    this.toastr.success('Certificación creada con éxito!');
+                    this.toastr.success('Certificación creada!');
                     this.router.navigate(['/']);
                 },
                 error: (err) => {

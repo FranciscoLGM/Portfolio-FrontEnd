@@ -28,7 +28,7 @@ export class NewProfileComponent implements OnInit {
             profession: ['', Validators.required],
             occupation: ['', Validators.required],
             heroDescription: ['', Validators.required],
-            aboutDescription: ['', Validators.maxLength(550)],
+            aboutDescription: ['', Validators.required],
             imageProfile: ['', Validators.required],
         });
         this.id = this.activeRoute.snapshot.paramMap.get('id')!; // ! para que no sea null
@@ -51,10 +51,10 @@ export class NewProfileComponent implements OnInit {
         };
 
         if (this.id !== null) {
-            // Actualizar expertise
+            // Actualizar profile
             this.portfolioService.putPerson(profile).subscribe({
                 next: (data) => {
-                    this.toastr.info('Perfil actualizado con éxito!');
+                    this.toastr.info('Perfil actualizado!');
                     this.router.navigate(['/']);
                 },
                 error: (err) => {
@@ -63,10 +63,10 @@ export class NewProfileComponent implements OnInit {
                 },
             });
         } else {
-            // Crear expertise
+            // Crear profile
             this.portfolioService.postPerson(profile).subscribe({
                 next: (data) => {
-                    this.toastr.info('Perfil creado con éxito!');
+                    this.toastr.info('Perfil creado!');
                     this.router.navigate(['/']);
                 },
                 error: (err) => {
