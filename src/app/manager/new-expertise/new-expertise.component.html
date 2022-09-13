@@ -148,8 +148,11 @@
                         *ngIf="
                             expertiseForm
                                 .get('description')
+                                ?.hasError('maxlength') ||
+                            (expertiseForm
+                                .get('description')
                                 ?.hasError('required') &&
-                            expertiseForm.get('description')?.touched
+                                expertiseForm.get('description')?.touched)
                         "
                     >
                         Debes ingresar una descripción de hasta 550 caracteres

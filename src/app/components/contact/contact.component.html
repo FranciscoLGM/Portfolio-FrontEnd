@@ -45,8 +45,9 @@
                     <label
                         class="alert"
                         *ngIf="
-                            contactForm.get('email')?.hasError('pattern') &&
-                            contactForm.get('email')?.touched
+                            contactForm.get('email')?.hasError('pattern') ||
+                            (contactForm.get('email')?.hasError('required') &&
+                                contactForm.get('email')?.touched)
                         "
                     >
                         Debes ingresar un email valido

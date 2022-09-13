@@ -28,7 +28,10 @@ export class NewProfileComponent implements OnInit {
             profession: ['', Validators.required],
             occupation: ['', Validators.required],
             heroDescription: ['', Validators.required],
-            aboutDescription: ['', Validators.required],
+            aboutDescription: [
+                '',
+                Validators.required || Validators.maxLength(550),
+            ],
             imageProfile: ['', Validators.required],
         });
         this.id = this.activeRoute.snapshot.paramMap.get('id')!; // ! para que no sea null

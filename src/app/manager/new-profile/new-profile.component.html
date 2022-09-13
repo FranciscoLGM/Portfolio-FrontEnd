@@ -129,8 +129,11 @@
                         *ngIf="
                             profileForm
                                 .get('aboutDescription')
+                                ?.hasError('maxlength') ||
+                            (profileForm
+                                .get('aboutDescription')
                                 ?.hasError('required') &&
-                            profileForm.get('aboutDescription')?.touched
+                                profileForm.get('aboutDescription')?.touched)
                         "
                     >
                         Debes ingresar una descripción de hasta 550 caracteres

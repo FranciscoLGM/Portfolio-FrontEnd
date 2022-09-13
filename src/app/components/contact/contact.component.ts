@@ -23,7 +23,10 @@ export class ContactComponent implements OnInit {
     ) {
         this.contactForm = this.formBuilder.group({
             name: ['', Validators.required],
-            email: ['', Validators.pattern(this.reggaxPattern)],
+            email: [
+                '',
+                Validators.pattern(this.reggaxPattern) || Validators.required,
+            ],
             message: ['', Validators.required],
             _honey: [''],
             _subject: ['New submission!'],
@@ -51,7 +54,7 @@ export class ContactComponent implements OnInit {
 
         this.contactFormService.postForm(contact).subscribe({
             next: (data) => {
-                this.toastr.info('¡Mensaje enviado correctamente!');
+                this.toastr.info('¡Mensaje enviado!');
                 this.contactForm.reset();
             },
             error: (err) => {
