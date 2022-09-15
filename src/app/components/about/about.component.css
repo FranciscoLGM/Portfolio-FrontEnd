@@ -13,12 +13,12 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
 }
 
 .about-avatar {
-    max-width: 300px;
+    max-width: 250px;
 }
 
 .about-avatar > picture > img {
@@ -35,6 +35,11 @@
     padding: 0 2rem;
 }
 
+.hi {
+    font-size: 4.5rem;
+    padding: 0.5rem;
+}
+
 .about-paragraph {
     text-align: center;
     font-size: 1.8rem;
@@ -46,19 +51,15 @@
 
 @media (max-width: 850px) {
     .about-avatar {
-        max-width: 250px;
+        max-width: 200px;
+    }
+    .hi {
+        font-size: 3.5rem;
     }
 }
 
 @media (max-width: 500px) {
-    .about {
-        height: auto;
-    }
-
-    .about-container {
-        height: auto;
-    }
     .about-avatar {
-        max-width: 150px;
+        max-width: 185px;
     }
 }
