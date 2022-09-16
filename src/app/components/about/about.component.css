@@ -62,4 +62,8 @@
     .about-avatar {
         max-width: 185px;
     }
+
+    .container {
+        margin: 2rem 0;
+    }
 }

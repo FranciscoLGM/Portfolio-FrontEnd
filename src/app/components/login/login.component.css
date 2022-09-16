@@ -117,8 +117,12 @@ button:disabled {
 
 /* media queries */
 
-@media (max-width: 450px) {
+@media (max-width: 500px) {
     form {
         width: 350px;
+    }
+    .container {
+        height: auto;
+        padding: 2rem;
     }
 }

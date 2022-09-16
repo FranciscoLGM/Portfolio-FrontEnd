@@ -14,7 +14,7 @@
 .contact-text {
     font-size: 1.7rem;
     font-weight: 400;
-    padding-bottom: 4rem;
+    padding: 0 2rem 4rem 2rem;
     color: var(--bs-text-color-dark);
     text-align: center;
 }

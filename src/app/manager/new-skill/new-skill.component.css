@@ -121,4 +121,8 @@ button:disabled {
     form {
         max-width: 350px;
     }
+    .container {
+        height: auto;
+        padding: 2rem;
+    }
 }
