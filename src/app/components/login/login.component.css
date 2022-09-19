@@ -125,4 +125,7 @@ button:disabled {
         height: auto;
         padding: 2rem;
     }
+    ::placeholder {
+        color: #fff;
+    }
 }
