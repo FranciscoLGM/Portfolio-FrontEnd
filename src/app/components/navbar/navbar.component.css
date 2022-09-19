@@ -3,7 +3,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 1rem 0 0;
+    padding: 0 1rem;
     background-color: var(--bs-background-color);
     color: var(--bs-text-color);
     width: 100%;
@@ -16,10 +16,9 @@
     gap: 1rem;
 }
 
-.nav-link {
-    display: flex;
-    max-width: 100%;
+picture {
     height: 70px;
+    max-width: 115px;
 }
 
 .nav-img {
