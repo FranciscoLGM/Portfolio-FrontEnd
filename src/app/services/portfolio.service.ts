@@ -12,7 +12,7 @@ import { Skill } from '../models/skill';
     providedIn: 'root',
 })
 export class portfolioService {
-    private baseURL = `https://portfolio-yo-programo2.herokuapp.com/api/v1`;
+    private baseURL = `https://portfolio-backend-1u4o.onrender.com/api/v1`;
 
     constructor(private http: HttpClient) {}
 

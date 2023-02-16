@@ -8,7 +8,7 @@ import { Signin } from '../models/signin';
     providedIn: 'root',
 })
 export class AuthService {
-    private authURL = `https://portfolio-yo-programo2.herokuapp.com/api/v1/auth`;
+    private authURL = `https://portfolio-backend-1u4o.onrender.com/api/v1/auth`;
 
     constructor(private http: HttpClient) {}
 
