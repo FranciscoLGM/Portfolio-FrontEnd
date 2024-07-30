@@ -12,7 +12,7 @@ import { Skill } from '../models/skill';
     providedIn: 'root',
 })
 export class portfolioService {
-    private baseURL = `https://portfolio-backend-1u4o.onrender.com/api/v1`;
+    private baseURL = `../../assets/data/data.json`;
 
     constructor(private http: HttpClient) {}
 
@@ -48,7 +48,7 @@ export class portfolioService {
     // Metodos para obtener todos los registros
 
     getPerson(): Observable<any> {
-        return this.http.get(`${this.baseURL}/list/persons`);
+        return this.http.get(`${this.baseURL}`);
     }
 
     getExpertise(): Observable<any> {
