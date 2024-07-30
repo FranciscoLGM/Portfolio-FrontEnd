@@ -33,7 +33,7 @@ export class SkillsComponent implements OnInit {
     private getSkillData() {
         this.portfolioService.getSkill().subscribe({
             next: (data) => {
-                this.skills = data;
+                this.skills = data.skills;
             },
         });
     }

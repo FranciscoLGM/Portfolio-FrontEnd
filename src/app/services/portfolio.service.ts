@@ -52,23 +52,23 @@ export class portfolioService {
     }
 
     getExpertise(): Observable<any> {
-        return this.http.get(`${this.baseURL}/list/expertises`);
+        return this.http.get(`${this.baseURL}`);
     }
 
     getEducation(): Observable<any> {
-        return this.http.get(`${this.baseURL}/list/educations`);
+        return this.http.get(`${this.baseURL}`);
     }
 
     getCertification(): Observable<any> {
-        return this.http.get(`${this.baseURL}/list/certifications`);
+        return this.http.get(`${this.baseURL}`);
     }
 
     getSkill(): Observable<any> {
-        return this.http.get(`${this.baseURL}/list/skills`);
+        return this.http.get(`${this.baseURL}`);
     }
 
     getProject(): Observable<any> {
-        return this.http.get(`${this.baseURL}/list/projects`);
+        return this.http.get(`${this.baseURL}`);
     }
 
     // Metodos para obtener un registro por id

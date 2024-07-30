@@ -2,5 +2,215 @@
     "profession": "Diseñador Fotográfico",
     "occupation": "Desarrollador Full Stack",
     "heroDescription": "Diseño y codifico cosas hermosas y sencillas, y me encanta lo que hago.",
-    "imageProfile": "../../assets/images/profile.jpg"
+    "imageProfile": "../../assets/images/profile.jpg",
+    "name": "Francisco",
+    "aboutDescription": "Soy un desarrollador Full Stack con experiencia en diversas tecnologías, como JavaScript, Node.js, React, Angular, Vue.js, Java, Spring Boot, Python y Django. Me apasiona crear soluciones innovadoras y eficientes para los problemas de los usuarios. Mi objetivo es seguir aprendiendo y creciendo como profesional en el campo del desarrollo de software.",
+    "id": 0,
+    "expertises": [
+        {
+            "imageCompany": "../../assets/images/expertise/freelancer.png",
+            "position": "Desarrollador Web",
+            "company": "Profesional independiente",
+            "inicio": "Marzo 2021",
+            "fin": "Actualidad",
+            "city": "Ciudad Autónoma de Buenos Aires",
+            "description": "Apasionado por el diseño y desarrollo web, me especializo en crear sitios atractivos y funcionales. Mi experiencia abarca desde sitios web estáticos hasta aplicaciones dinámicas. Trabajo con diversas tecnologías para ofrecer soluciones personalizadas. Además, ofrezco soporte continuo y me aseguro de que los sitios estén siempre actualizados y optimizados."
+        }
+    ],
+    "educations": [
+        {
+            "imageUniversity": "../../assets/images/education/up.jpg",
+            "degree": "Diseñador Fotográfico",
+            "university": "Universidad de Palermo",
+            "inicio": "Agosto 2010",
+            "fin": "Junio 2015",
+            "city": "Ciudad Autónoma de Buenos Aires",
+            "description": ""
+        }
+    ],
+    "certifications": [
+        {
+            "imageUniversity": "../../assets/images/education/utn.png",
+            "degree": "Desarrollo Web Avanzado",
+            "university": "Universidad Tecnológica Nacional",
+            "inicio": "Septiembre 2023",
+            "fin": "Enero 2024",
+            "city": "Ciudad Autónoma de Buenos Aires",
+            "description": ""
+        },
+        {
+            "imageUniversity": "../../assets/images/education/codo-a-codo.jpg",
+            "degree": "Especialización en React",
+            "university": "Agencia de Aprendizaje a lo largo de la vida",
+            "inicio": "Agosto 2022",
+            "fin": "Diciembre 2022",
+            "city": "Ciudad Autónoma de Buenos Aires",
+            "description": ""
+        },
+        {
+            "imageUniversity": "../../assets/images/education/freecodecamp.jpg",
+            "degree": "JavaScript Algorithms and Data Structures",
+            "university": "FreeCodeCamp",
+            "inicio": "Abril 2022",
+            "fin": "Septiembre 2022",
+            "city": "Ciudad Autónoma de Buenos Aires",
+            "description": ""
+        },
+        {
+            "imageUniversity": "../../assets/images/education/arg-programa.png",
+            "degree": "Desarrollador Web Full Stack Jr",
+            "university": "Argentina Programa",
+            "inicio": "Febrero 2022",
+            "fin": "Agosto 2022",
+            "city": "Ciudad Autónoma de Buenos Aires",
+            "description": ""
+        },
+        {
+            "imageUniversity": "../../assets/images/education/codo-a-codo.jpg",
+            "degree": "Desarrollo Web Full Stack - JS/Node",
+            "university": "Agencia de Aprendizaje a lo largo de la vida",
+            "inicio": "Febrero 2022",
+            "fin": "Agosto 2022",
+            "city": "Ciudad Autónoma de Buenos Aires",
+            "description": ""
+        },
+        {
+            "imageUniversity": "../../assets/images/education/freecodecamp.jpg",
+            "degree": "Responsive Web Design",
+            "university": "FreeCodeCamp",
+            "inicio": "Enero 2022",
+            "fin": "Abril 2022",
+            "city": "Ciudad Autónoma de Buenos Aires",
+            "description": ""
+        },
+        {
+            "imageUniversity": "../../assets/images/education/mumuki.jpg",
+            "degree": "Argentina Programa Octubre - Diciembre 2021",
+            "university": "Mumuki",
+            "inicio": "Octubre 2021",
+            "fin": "Diciembre 2021",
+            "city": "Ciudad Autónoma de Buenos Aires",
+            "description": ""
+        },
+        {
+            "imageUniversity": "../../assets/images/education/codo-a-codo.jpg",
+            "degree": "Full Stack - Python",
+            "university": "Agencia de Aprendizaje a lo largo de la vida",
+            "inicio": "Agosto 2021",
+            "fin": "Diciembre 2021",
+            "city": "Ciudad Autónoma de Buenos Aires",
+            "description": ""
+        },
+        {
+            "imageUniversity": "../../assets/images/education/uis.svg",
+            "degree": "Desarrollador de Aplicaciones Web",
+            "university": "Universidad Industrial de Santander",
+            "inicio": "Mayo 2021",
+            "fin": "Diciembre 2021",
+            "city": "Ciudad Autónoma de Buenos Aires",
+            "description": ""
+        },
+        {
+            "imageUniversity": "../../assets/images/education/linkedin.jpg",
+            "degree": "Python avanzado",
+            "university": "LinkedIn Learning",
+            "inicio": "Agosto 2020",
+            "fin": "Noviembre 2020",
+            "city": "Ciudad Autónoma de Buenos Aires",
+            "description": ""
+        },
+        {
+            "imageUniversity": "../../assets/images/education/linkedin.jpg",
+            "degree": "Fundamentos de la programación: Diseño orientado a objetos",
+            "university": "LinkedIn Learning",
+            "inicio": "Julio 2020",
+            "fin": "Octubre 2020",
+            "city": "Ciudad Autónoma de Buenos Aires",
+            "description": ""
+        },
+        {
+            "imageUniversity": "../../assets/images/education/linkedin.jpg",
+            "degree": "Pensamiento computacional",
+            "university": "LinkedIn Learning",
+            "inicio": "Julio 2020",
+            "fin": "Octubre 2020",
+            "city": "Ciudad Autónoma de Buenos Aires",
+            "description": ""
+        },
+        {
+            "imageUniversity": "../../assets/images/education/google.jpg",
+            "degree": "Desarrollo de Apps Móviles",
+            "university": "Google Actívate",
+            "inicio": "Marzo 2020",
+            "fin": "Junio 2020",
+            "city": "Ciudad Autónoma de Buenos Aires",
+            "description": ""
+        }
+    ],
+    "skills": [
+        {
+            "skill": "HTML",
+            "rate": "90"
+        },
+        {
+            "skill": "CSS",
+            "rate": "80"
+        },
+        {
+            "skill": "JavaScript",
+            "rate": "75"
+        },
+        {
+            "skill": "Node.js",
+            "rate": "70"
+        },
+        {
+            "skill": "Angular",
+            "rate": "70"
+        },
+        {
+            "skill": "Python",
+            "rate": "70"
+        },
+        {
+            "skill": "Django",
+            "rate": "65"
+        },
+        {
+            "skill": "Vue.js",
+            "rate": "65"
+        },
+        {
+            "skill": "React",
+            "rate": "65"
+        },
+        {
+            "skill": "Java",
+            "rate": "60"
+        },
+        {
+            "skill": "Spring Boot",
+            "rate": "60"
+        },
+        {
+            "skill": "MySQL",
+            "rate": "60"
+        },
+        {
+            "skill": "MongoDB",
+            "rate": "60"
+        },
+        {
+            "skill": "Git",
+            "rate": "60"
+        },
+        {
+            "skill": "GitHub",
+            "rate": "60"
+        },
+        {
+            "skill": "Docker",
+            "rate": "50"
+        }
+    ]
 }

@@ -34,7 +34,7 @@ export class ExpertiseComponent implements OnInit {
     private getExpertiseData() {
         this.portfolioService.getExpertise().subscribe({
             next: (data) => {
-                this.expertises = data;
+                this.expertises = data.expertises;
             },
         });
     }

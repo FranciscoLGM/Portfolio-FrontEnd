@@ -38,7 +38,7 @@ export class EducationComponent implements OnInit {
     private getEducationData() {
         this.portfolioService.getEducation().subscribe({
             next: (data) => {
-                this.educations = data;
+                this.educations = data.educations;
             },
         });
     }
@@ -46,7 +46,7 @@ export class EducationComponent implements OnInit {
     private getCertificationData() {
         this.portfolioService.getCertification().subscribe({
             next: (data) => {
-                this.certifications = data;
+                this.certifications = data.certifications;
             },
         });
     }
