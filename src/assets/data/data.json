@@ -212,5 +212,79 @@
             "skill": "Docker",
             "rate": "50"
         }
+    ],
+    "projects": [
+        {
+            "urlProject": "https://peliculas-yts.netlify.app/",
+            "imageProject": "../../assets/images/projects/peliculas-yts.png",
+            "description": "",
+            "title": "Peliculas YTS"
+        },
+        {
+            "urlProject": "https://pomodoro-clock-25-plus-5.netlify.app/",
+            "imageProject": "../../assets/images/projects/pomodoro-clock.png",
+            "description": "",
+            "title": "25 + 5 Clock"
+        },
+        {
+            "urlProject": "https://javascript-markdown-previewer.netlify.app/",
+            "imageProject": "../../assets/images/projects/markdown-previewer.png",
+            "description": "",
+            "title": "Markdown Previewer"
+        },
+        {
+            "urlProject": "https://javascript-react-calculator.netlify.app/",
+            "imageProject": "../../assets/images/projects/js-calculadora.png",
+            "description": "",
+            "title": "React Calculator"
+        },
+        {
+            "urlProject": "https://maquina-de-frases-aleatorias.netlify.app/",
+            "imageProject": "../../assets/images/projects/maquina-de-frases-aleatorias.png",
+            "description": "",
+            "title": "Random Quote Machine"
+        },
+        {
+            "urlProject": "https://bateria-electronica.netlify.app/",
+            "imageProject": "../../assets/images/projects/drum-machine.png",
+            "description": "",
+            "title": "Drum Machine"
+        },
+        {
+            "urlProject": "https://franciscolopezgarciamayorga.web.app/",
+            "imageProject": "../../assets/images/projects/portfolio.jpg",
+            "description": "",
+            "title": "Portfolio Web Full Stack"
+        },
+        {
+            "urlProject": "https://franciscolgm.github.io/",
+            "imageProject": "../../assets/images/projects/notflix.jpg",
+            "description": "",
+            "title": "Pagina de Películas"
+        },
+        {
+            "urlProject": "https://codepen.io/franciscolopezg/full/VwyVGag",
+            "imageProject": "../../assets/images/projects/formulario-encuesta.jpg",
+            "description": "",
+            "title": "Survey Form"
+        },
+        {
+            "urlProject": "https://codepen.io/franciscolopezg/full/NWXLdaN",
+            "imageProject": "../../assets/images/projects/pagina-tributo.jpg",
+            "description": "",
+            "title": "Tribute Page"
+        },
+        {
+            "urlProject": "https://codepen.io/franciscolopezg/full/JjMzbMx",
+            "imageProject": "../../assets/images/projects/landing-page.jpg",
+            "description": "",
+            "title": "Product Landing Page"
+        },
+        {
+            "urlProject": "https://codepen.io/franciscolopezg/full/YzYoYqW",
+            "imageProject": "../../assets/images/projects/documentacion-tecnica.jpg",
+            "description": "",
+            "title": "Technical Documentation Page"
+        }
     ]
 }

@@ -34,7 +34,7 @@ export class ProjectsComponent implements OnInit {
     private getProjectData() {
         this.portfolioService.getProject().subscribe({
             next: (data) => {
-                this.projects = data;
+                this.projects = data.projects;
             },
         });
     }
