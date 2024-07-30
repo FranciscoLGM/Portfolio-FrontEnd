@@ -1,11 +1,19 @@
 {
-    "profession": "Diseñador Fotográfico",
-    "occupation": "Desarrollador Full Stack",
-    "heroDescription": "Diseño y codifico cosas hermosas y sencillas, y me encanta lo que hago.",
-    "imageProfile": "../../assets/images/profile.jpg",
-    "name": "Francisco",
-    "aboutDescription": "Soy un desarrollador Full Stack con experiencia en diversas tecnologías, como JavaScript, Node.js, React, Angular, Vue.js, Java, Spring Boot, Python y Django. Me apasiona crear soluciones innovadoras y eficientes para los problemas de los usuarios. Mi objetivo es seguir aprendiendo y creciendo como profesional en el campo del desarrollo de software.",
-    "id": 0,
+    "header": [
+        {
+            "profession": "Diseñador Fotográfico",
+            "occupation": "Desarrollador Full Stack",
+            "heroDescription": "Diseño y codifico cosas hermosas y sencillas, y me encanta lo que hago."
+        }
+    ],
+    "about": [
+        {
+            "imageProfile": "../../assets/images/profile.jpg",
+            "name": "Francisco",
+            "aboutDescription": "Soy un desarrollador Full Stack con experiencia en diversas tecnologías, como JavaScript, Node.js, React, Angular, Vue.js, Java, Spring Boot, Python y Django. Me apasiona crear soluciones innovadoras y eficientes para los problemas de los usuarios. Mi objetivo es seguir aprendiendo y creciendo como profesional en el campo del desarrollo de software."
+        }
+    ],
+
     "expertises": [
         {
             "imageCompany": "../../assets/images/expertise/freelancer.png",
@@ -14,7 +22,7 @@
             "inicio": "Marzo 2021",
             "fin": "Actualidad",
             "city": "Ciudad Autónoma de Buenos Aires",
-            "description": "Apasionado por el diseño y desarrollo web, me especializo en crear sitios atractivos y funcionales. Mi experiencia abarca desde sitios web estáticos hasta aplicaciones dinámicas. Trabajo con diversas tecnologías para ofrecer soluciones personalizadas. Además, ofrezco soporte continuo y me aseguro de que los sitios estén siempre actualizados y optimizados."
+            "description": "Apasionado por el diseño y desarrollo web, me especializo en crear sitios atractivos y funcionales. Mi experiencia abarca desde la creación de sitios web estáticos hasta el desarrollo de aplicaciones dinámicas. Trabajo con diversas tecnologías para ofrecer soluciones personalizadas a mis clientes. Además, me comprometo a proporcionar un soporte continuo y a mantener los sitios siempre actualizados y optimizados."
         }
     ],
     "educations": [

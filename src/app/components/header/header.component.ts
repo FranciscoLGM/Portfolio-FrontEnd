@@ -20,9 +20,9 @@ export class HeaderComponent implements OnInit {
     private getPersonData() {
         this.portfolioService.getPerson().subscribe({
             next: (data) => {
-                this.profession = data?.profession;
-                this.occupation = data?.occupation;
-                this.heroDescription = data?.heroDescription;
+                this.profession = data?.header[0].profession;
+                this.occupation = data?.header[0].occupation;
+                this.heroDescription = data?.header[0].heroDescription;
             },
         });
     }

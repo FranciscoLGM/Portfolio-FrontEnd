@@ -32,9 +32,9 @@ export class AboutComponent implements OnInit {
     private getPersonData() {
         this.portfolioService.getPerson().subscribe({
             next: (data) => {
-                this.imageProfile = data?.imageProfile;
-                this.name = data?.name;
-                this.aboutDescription = data?.aboutDescription;
+                this.imageProfile = data?.about[0].imageProfile;
+                this.name = data?.about[0].name;
+                this.aboutDescription = data?.about[0].aboutDescription;
                 this.id = data?.id;
             },
         });
